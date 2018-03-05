@@ -3,4 +3,5 @@ class Space < ApplicationRecord
   validates :address, presence: true
   validates :price, presence: true
   validates :type, presence: true
+  validates :category, presence: true, inclusion: ["garage", "drive", "street"]
 end
