@@ -26,19 +26,3 @@ Rails.application.routes.draw do
   # GET   ‘/spaces/:id/edit’   =>    ‘spaces#edit’
   # PATCH   ‘/spaces/:id’   => ‘spaces#update’
 end
-
-
-
-# Profile?????????
-
-
-# Profile: new, create, show, edit, update             (*delete)
-
-# GET    ‘/profiles/new’   =>   profiles#new’
-
-# POST   ‘/profiles   =>   profiles#create’
-
-# GET   ‘/profiles/:id/edit’   =>    profiles#edit’
-
-# PATCH   ‘/profiles/:id’   => ‘profiles#update’
-
