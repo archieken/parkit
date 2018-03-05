@@ -3,5 +3,5 @@ class Reservation < ApplicationRecord
   belongs_to :user
   validates :start, presence: true
   validates :end, presence: true
-  validates :total_end, presence: true
+  validates :total_cost, presence: true
 end
