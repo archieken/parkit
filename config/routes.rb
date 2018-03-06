@@ -6,16 +6,16 @@ Rails.application.routes.draw do
 
   # Users : new, create, edit, update
   # GET    ‘/users/new’   =>   users#new’
-  # POST   ‘/users   =>   users#create’
+  # POST   ‘/users'   =>   users#create’
   #  GET   ‘/users/:id/edit’   =>    users#edit’
   # PATCH   ‘/users/:id’   => users#update’
 
   resources :reservations, only: [:index, :new, :create]
 
   # Bookings: new, create, index                            (*delete)
-  # GET     ‘/bookings    =>   ‘spaces#index’
+  # GET     ‘/bookings'    =>   ‘spaces#index’
   # GET    ‘/bookings/new’   =>   ‘spaces#new’
-  # POST   ‘/bookings   =>   ‘spaces#create’
+  # POST   ‘/bookings'   =>   ‘spaces#create’
 
   resources :spaces, only: [:index, :new, :create, :edit, :update]
 
@@ -25,4 +25,13 @@ Rails.application.routes.draw do
   # POST   ‘/spaces’   =>   ‘spaces#create’
   # GET   ‘/spaces/:id/edit’   =>    ‘spaces#edit’
   # PATCH   ‘/spaces/:id’   => ‘spaces#update’
+
+  resources :profiles, only: [:show, :new, :create, :edit, :update]
+
+  # profiles: new, create, index, edit, update
+  # GET     ‘/profiles/:id’    =>   ‘profiles#show'
+  # GET    ‘/profiles/new’   =>   ‘profiles#new’
+  # POST   ‘/profiles’   =>   ‘profiles#create’
+  # GET   ‘/profiles/:id/edit’   =>    ‘profiles#edit’
+  # PATCH   ‘/profiles/:id’   => ‘profiles#update’
 end
