@@ -28,7 +28,9 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
-            <li><%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li>
+              <%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
           </ul>
         </div>
       </div>
