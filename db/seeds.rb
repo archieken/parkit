@@ -30,10 +30,10 @@
 
     names = ["Bill","Jenny","Kyle","Fran","Jess"]
 
-      emails.each do |email|
-     Profile.create(first_name: names.sample, last_name: "Morris", phone: "12345567", description: "blablah", avatar: "empty", user: User.find_by(email: email))
-     end
-     puts "Profiles made"
+    emails.each do |email|
+      Profile.create(first_name: names.sample, last_name: "Morris", phone: "12345567", description: "blablah", avatar: "empty", user: User.find_by(email: email))
+    end
+    puts "Profiles made"
 
 # t.string :first_name
 #       t.string :last_name
