@@ -1,0 +1,18 @@
+<%= form_for(@profile) do |p| %>
+  <%= p.label :first_name %>
+  <%= p.text_field :first_name %>
+
+  <%= p.label :last_name %>
+  <%= p.text_field :last_name %>
+
+  <%= p.label :phone %>
+  <%= p.text_field :phone %>
+
+  <%= p.label :avatar %>
+  <%= p.text_field :avatar %>
+
+  <%= p.label :description %>
+  <%= p.text_field :description %>
+
+  <%= p.submit %>
+<% end %>
