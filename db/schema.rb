@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180306110147) do
     t.float "price"
     t.string "photo"
     t.float "avg_rating"
-    t.string "type"
+    t.string "parking_type"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
