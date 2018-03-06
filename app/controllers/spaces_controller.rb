@@ -4,7 +4,9 @@ class SpacesController < ApplicationController
  def index
    location = params[:location]
      start_date = params[:start]
+     start_date = Date.today.to_s if start_date.blank?
      end_date = params[:end]
+     end_date = Date.today.to_s if end_date.blank?
      session[:start] = start_date
      session[:end] = end_date
      session[:location] = location
@@ -24,7 +26,6 @@ class SpacesController < ApplicationController
        marker.infowindow render_to_string(partial: "/spaces/map_box", locals: { space: space })
       end
     end
-  end
  end
 
  def new
