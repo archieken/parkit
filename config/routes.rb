@@ -10,14 +10,9 @@ Rails.application.routes.draw do
   #  GET   ‘/users/:id/edit’   =>    users#edit’
   # PATCH   ‘/users/:id’   => users#update’
 
-  resources :reservations, only: [:index, :new, :create]
-
-  # Bookings: new, create, index                            (*delete)
-  # GET     ‘/bookings'    =>   ‘spaces#index’
-  # GET    ‘/bookings/new’   =>   ‘spaces#new’
-  # POST   ‘/bookings'   =>   ‘spaces#create’
-
-  resources :spaces, only: [:index, :new, :create, :edit, :update]
+  resources :spaces, only: [:index, :new, :create, :edit, :update] do
+    resources :reservations, only: [:index, :new, :create]
+  end
 
   # Spaces: new, create, index, edit, update
   # GET     ‘/spaces’    =>   ‘spaces#index’
