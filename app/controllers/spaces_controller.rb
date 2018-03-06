@@ -20,6 +20,7 @@ class SpacesController < ApplicationController
        marker.lng space.longitude
        marker.infowindow render_to_string(partial: "/spaces/map_box", locals: { space: space })
     end
+  end
  end
 
  def new
@@ -35,9 +36,9 @@ class SpacesController < ApplicationController
       render 'new'
     end
   end
-   
+
   private
-   
+
   def space_params
     params.require(:space).permit(:address, :price, :parking_type, :photo)
   end
