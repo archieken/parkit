@@ -9,7 +9,7 @@ class SpacesController < ApplicationController
   # end = params[:end]
 
 
-  if params[:location].empty?
+  if (location.blank?)
     @spaces = Space.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
     marker.lat space.latitude
