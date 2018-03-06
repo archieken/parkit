@@ -10,7 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-
+      <div class="navbar-wagon-item">
+        <%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -26,6 +28,7 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
+            <li><%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           </ul>
         </div>
       </div>
