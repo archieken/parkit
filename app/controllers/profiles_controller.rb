@@ -3,12 +3,16 @@ class ProfilesController < ApplicationController
   before_action :find_user_id, only: [ :show, :create, :edit, :update ]
 
   def show
-    @profile = Profile.find(params[:user_id])
+    profile = Profile.find(params[:user_id])
+    if profile.nil?
+      new
+    else
+      @profile = profile
+    end
   end
 
   def new
     @profile = Profile.new
-    @profile.user_id = @user_id
   end
 
   def create
