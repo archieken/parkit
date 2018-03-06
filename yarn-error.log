@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js gmaps
 
 PATH: 
-  /Users/joscha/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/joscha/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:/Users/joscha/.rbenv/shims:./bin:./node_modules/.bin:/Users/joscha/.rbenv/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+  /Users/joscha/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:/Users/joscha/.rbenv/shims:./bin:./node_modules/.bin:/Users/joscha/.rbenv/shims:/Users/joscha/.rbenv/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/sbin
 
 Yarn version: 
   1.5.1
@@ -20,7 +20,8 @@ npm manifest:
     "dependencies": {
       "@rails/webpacker": "^3.3.0",
       "bootstrap": "3",
-      "jquery": "^3.3.1"
+      "jquery": "^3.3.1",
+      "markerwithlabel": "^2.0.1"
     },
     "devDependencies": {
       "webpack-dev-server": "^3.1.0"
@@ -3349,6 +3350,10 @@ Lockfile:
     dependencies:
       object-visit "^1.0.0"
   
+  markerwithlabel@^2.0.1:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/markerwithlabel/-/markerwithlabel-2.0.1.tgz#822f4eb68c488c2509c5ebdb75982eb84a856096"
+  
   math-expression-evaluator@^1.2.14:
     version "1.2.17"
     resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -6108,10 +6113,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Found 1 errors.
+  Error: Command "gmaps" not found.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:59470:13
+      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:87307:17
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
-      at <anonymous>
+      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:23451:28)
+      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:95:12
+      at runCommand (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:87312:22)
+      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:87412:14)
