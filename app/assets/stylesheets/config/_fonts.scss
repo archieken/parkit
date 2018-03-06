@@ -1,9 +1,18 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700');
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url("/fonts/bebas_neue/BebasNeue-Regular.eot") format("eot"),
+       url("/fonts/bebas_neue/BebasNeue-Regular.otf") format("otf"),
+       url("/fonts/bebas_neue/BebasNeue-Regular.ttf") format("ttf"),
+       url("/fonts/bebas_neue/BebasNeue-Regular.woff") format("woff"),
+       url("/fonts/bebas_neue/BebasNeue-Regular.woff2") format("woff2"),;
+}
+
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Montserrat", "Helvetica", "sans-serif";
+$headers-font: "BebasNeue-Regular", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
