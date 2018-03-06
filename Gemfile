@@ -18,6 +18,13 @@ gem 'webpacker'
 gem 'devise'
 gem 'geocoder'
 
+gem 'coffee-rails'
+gem 'gmaps4rails'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
