@@ -3,8 +3,11 @@ class SpacesController < ApplicationController
 
  def index
    location = params[:location]
-     # start = params[:start]
-     # end = params[:end]
+     start_date = params[:start]
+     end_date = params[:end]
+     session[:start] = start_date
+     session[:end] = end_date
+     session[:location] = location
    if (location.blank?)
      @spaces = Space.where.not(latitude: nil, longitude: nil)
      @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
@@ -19,6 +22,7 @@ class SpacesController < ApplicationController
        marker.lat space.latitude
        marker.lng space.longitude
        marker.infowindow render_to_string(partial: "/spaces/map_box", locals: { space: space })
+      end
     end
   end
  end
