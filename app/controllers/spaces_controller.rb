@@ -2,13 +2,9 @@ class SpacesController < ApplicationController
 
 
   def index
-
-
     location = params[:location]
     # start = params[:start]
     # end = params[:end]
-
-
     if (location.blank?)
       @spaces = Space.where.not(latitude: nil, longitude: nil)
       @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
@@ -26,5 +22,24 @@ class SpacesController < ApplicationController
       end
     end
   end
+  
+  def new
+    @space = Space.new
+  end
 
+  def create
+    @space = Space.new(space_params)
+    @space.user = current_user
+      if @space.save
+        redirect_to spaces_path
+      else
+        render 'new'
+      end
+  end
+
+  private
+
+    def space_params
+      params.require(:space).permit(:address, :price, :parking_type, :photo)
+    end
 end
