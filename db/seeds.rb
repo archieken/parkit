@@ -1,3 +1,4 @@
+    Profile.destroy_all
     Reservation.destroy_all
     Space.destroy_all
     User.destroy_all
@@ -23,3 +24,19 @@
      Reservation.create(start: Date.new(2017,5,5), end: Date.new(2017,5,6), status: "booked", total_cost: 11, description: "Please look after my wheels.", space: Space.find_by(address: "Berlin"), user: User.find_by(email: "john@yadoo.com"))
 
      puts "Reservations made"
+
+
+    puts "Creating Profiles"
+
+    names = ["Bill","Jenny","Kyle","Fran","Jess"]
+
+      emails.each do |email|
+     Profile.create(first_name: names.sample, last_name: "Morris", phone: "12345567", description: "blablah", avatar: "empty", user: User.find_by(email: email))
+     end
+     puts "Profiles made"
+
+# t.string :first_name
+#       t.string :last_name
+#       t.string :phone
+#       t.text :description
+#       t.string :avatar
