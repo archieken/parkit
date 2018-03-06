@@ -14,7 +14,7 @@ class SpacesController < ApplicationController
      end
    else
      space_not_null = Space.all.where.not(latitude: nil, longitude: nil)
-     @spaces = space_not_null.all.where("address ILIKE ?", location)
+     @spaces = space_not_null.all.where("address ILIKE ?", "%#{location}%")
      @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
        marker.lat space.latitude
        marker.lng space.longitude
