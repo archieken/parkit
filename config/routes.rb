@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'spaces#index' # Root  ‘/’   =>  ‘spaces#index’
+  root to: 'pages#home' # Root  ‘/’   =>  'pages#home’
 
   resources :users, only: [:new, :create, :edit, :update]
 
