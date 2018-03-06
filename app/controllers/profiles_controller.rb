@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :find_user_id, only: [ :show, :create, :edit, :update ]
 
   def show
-    profile = Profile.find(current_user.id)
+    profile = Profile.find(current_user.profile.id)
     if profile.nil?
       new
     else
@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    profile = Profile.find(current_user.id)
+    profile = Profile.find(current_user.profile.id)
   end
 
   def update
