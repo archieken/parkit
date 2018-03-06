@@ -1,5 +1,5 @@
 <div class="map_box">
   <h3><%= space.price %></h3>
   <p><%= space.address %></p>
-  <%= link_to "Book", space_reservations_path(space), target: :blank, class: "btn btn-warning" %>
+  <%= link_to "Book", space_reservations_path(space), method: :post, target: :blank, class: "btn btn-warning" %>
 </div>
