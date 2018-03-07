@@ -17,6 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'geocoder'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 gem 'coffee-rails'
 gem 'gmaps4rails'

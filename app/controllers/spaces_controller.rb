@@ -26,7 +26,7 @@ class SpacesController < ApplicationController
        marker.infowindow render_to_string(partial: "/spaces/map_box", locals: { space: space })
       end
     end
- end
+  end
 
  def new
    @space = Space.new
