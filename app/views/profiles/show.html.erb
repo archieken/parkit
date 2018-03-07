@@ -22,6 +22,8 @@
           <div class="col-lg-3">
           <h5><b>Price: <%=reservation.total_cost%>€</b></h5>
           <h6><i class="fa fa-calendar fa-fw"></i><%=reservation.start%> - <%=reservation.end%></h6>
+          <h5>Contact parking space owner:</h5>
+          <h6><%= reservation.space.user.email%></h6>
           <hr>
         </div>
 
