@@ -1,9 +1,12 @@
 .multi-item-carousel{
 
     .img-responsive {
+      overflow: hidden;
+      height: 300px;
       img {
-        width: 100%;
+
         padding: 10px;
+        height: 370px;
       }
     }
 
