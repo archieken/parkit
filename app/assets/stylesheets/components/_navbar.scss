@@ -17,7 +17,7 @@
 
 
 @media screen and (min-width: 990px) {
-  .navbar-wagon img {
+  .logo {
     height: 25px;
     margin-left: 100px;
   }
@@ -25,17 +25,17 @@
 
 @media screen and (min-width: 481px) and (max-width: 990px) {
     /* STYLES HERE */
-  .navbar-wagon img {
+  .logo {
     height: 25px;
-    margin-left: -15px;
+    margin-left: 0px;
   }
 }
 
 @media only screen and (max-width: 480px) {
     /* STYLES HERE */
-  .navbar-wagon img {
+  .logo {
     height: 25px;
-    margin-left: -15px;
+    margin-left: 0px;
   }
 }
 
@@ -43,10 +43,11 @@
 
 
 /* User Avatar */
-.navbar-wagon .avatar {
+.avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  margin-left: 15px;
 }
 
 /* Right section */
@@ -61,19 +62,22 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
-
   color: white;
   font-size: 15px;
   font-family: 'Montserrat';
   font-weight: 600;
+  margin: 0 15px;
 }
 .navbar-wagon-link:hover {
-  color: grey;
+  opacity: 50%;
   text-decoration: none;
 }
 
@@ -109,12 +113,11 @@
 }
 
 a {
-  display: flex;
   color:white;
-  font-family: BebasNeue-Regular;
+  font-family: Montserrat;
 }
 
 a:hover {
-  color: grey;
+  opacity: 50%;
   text-decoration: none;
 }
