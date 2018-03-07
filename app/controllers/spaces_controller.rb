@@ -2,16 +2,15 @@ class SpacesController < ApplicationController
 
 
  def index
-   location = params[:location]
+    location = params[:location]
      start_date = params[:start]
-     #params[:start] = Date.today.to_s if start_date.blank?
      end_date = params[:end]
-     #params[:end] = Date.today.to_s if end_date.blank?
+     start_date = Date.today if start_date.blank?
+     end_date = Date.today if end_date.blank?
      session[:start] = start_date
      session[:end] = end_date
      session[:location] = location
    if (location.blank?)
-    raise
      @spaces = Space.where.not(latitude: nil, longitude: nil)
      @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
        marker.lat space.latitude
@@ -22,7 +21,6 @@ class SpacesController < ApplicationController
      spaces_not_null = Space.all.where.not(latitude: nil, longitude: nil)
      @spaces = spaces_not_null.near(location, params[:distance].to_i)
 
-     #where("address ILIKE ?", "%#{location}%")
      @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
        marker.lat space.latitude
        marker.lng space.longitude
@@ -43,6 +41,12 @@ class SpacesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+
+  def destroy
+    Space.destroy(params[:id])
+    redirect_to spaces_path
   end
 
   private

@@ -4,5 +4,5 @@
   <p>Parking Type: <%= space.parking_type %></p>
   <%= cl_image_tag space.photo, height: 300, width: 400, crop: :fill %>
 
-  <%= link_to "Book", space_reservations_path(space), method: :post, target: :blank, class: "btn btn-warning" %>
+  <%= link_to "Book", space_reservations_path(space), method: :post, class: "btn btn-success" %>
 </div>
