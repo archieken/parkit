@@ -24,7 +24,7 @@ class SpacesController < ApplicationController
      end
    else
 
-     space_not_null = Space.all.where.not(latitude: nil, longitude: nil)
+     spaces_not_null = Space.all.where.not(latitude: nil, longitude: nil)
      @spaces = spaces_not_null.near(location, params[:distance].to_i)
 
 
