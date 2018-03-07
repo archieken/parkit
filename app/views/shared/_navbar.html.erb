@@ -19,11 +19,11 @@
         <%= t(".sign_out", default: "LOG OUT") %>
       <% end %>
 
-      <%= link_to profile_path(current_user.id) do %>
+        <%= link_to profile_path(current_user.id) do %>
 
-        <%= image_tag "https://cdn.shopify.com/s/files/1/1000/0694/products/MH-PNTS-16-C_b_1024x1024.jpg?v=1451403267", class: "avatar dropdown-toggle"%>
-      <% end %>
-      <% end %>
+          <%= image_tag "https://cdn.shopify.com/s/files/1/1000/0694/products/MH-PNTS-16-C_b_1024x1024.jpg?v=1451403267", class: "avatar dropdown-toggle"%>
+        <% end %>
+
     </div>
 
 
@@ -41,15 +41,15 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <% if current_user.nil? %>
-
-        <% else %>
+        <% if !current_user.nil? %>
           <li><%= link_to t(profile_path(current_user.id), default: "My profile")%>
         <% end %>
-        <li><%= link_to t(new_space_path, default: "Create new parking"), new_space_path %></li>
+        <li><%= link_to t(new_space_path, default: "Create new parking"), new_space_path %>
+        </li>
         <li><%= link_to destroy_user_session_path, method: :delete do %>
-        <%= t(".sign_out", default: "Log out") %>
-      <% end %></li>
+          <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
