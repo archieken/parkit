@@ -1,6 +1,6 @@
 <div class="map_box">
 
-   <% unless space.photo %>
+   <% unless space.photo.url %>
     <%= cl_image_tag "v1520370914/non_existing.jpg", :width => 100, :height => 100, :crop => :fill %>
   <% else %>
     <%= cl_image_tag space.photo, :width => 100, :height => 100, :crop => :fill %>
