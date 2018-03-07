@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180306133402) do
     t.boolean "has_parking", default: false, null: false
     t.string "provider"
     t.string "uid"
+    t.string "avatar"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

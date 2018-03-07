@@ -17,7 +17,7 @@
     <div class="row">
           <h2><i class="fa fa-suitcase fa-fw"></i>Bookings</h2>
         <% if !current_user.reservations.blank? %>
-          <% for reservation in current_user.reservations%>
+          <% for reservation in current_user.reservations.sort_by{|reservation| reservation.start}%>
           <div class="col-lg-3">
           <h5><b>Price: <%=reservation.total_cost%>€</b></h5>
           <h6><i class="fa fa-calendar fa-fw"></i><%=reservation.start%> - <%=reservation.end%></h6>
@@ -38,7 +38,7 @@
       <div class="row">
         <% if !current_user.spaces.blank? %>
         <h2><i class="fa fa-car fa-fw"></i>Your Parking Spaces</h2>
-          <% for space in current_user.spaces%>
+          <% for space in current_user.spaces.sort_by{|reservation| reservation.start}%>
           <div class="col-lg-3">
           <h5><b>Price: <%=space.price%>€</b></h5>
           <h6><%=space.avg_rating%>/100</h6>

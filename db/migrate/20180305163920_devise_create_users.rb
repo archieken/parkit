@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       t.string :provider
       t.string :uid
+      t.string :avatar
 
       ## Recoverable
       t.string   :reset_password_token
