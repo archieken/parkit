@@ -34,6 +34,7 @@
   align-items: center;
   justify-content: space-between;
   margin-right: 100px;
+  color:white;
 }
 
 /* Basic navbar item */
@@ -45,7 +46,7 @@
 /* Navbar link */
 .navbar-wagon-link {
 
-  color: #616668;
+  color: white;
   font-size: 15px;
   font-family: 'Montserrat';
   font-weight: 600;
@@ -84,4 +85,15 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+a {
+  display: flex;
+  color:white;
+  font-family: BebasNeue-Regular;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: none;
 }
