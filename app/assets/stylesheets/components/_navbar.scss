@@ -14,10 +14,31 @@
 }
 
 /* Logo */
-.navbar-wagon img {
-  height: 25px;
-  margin-left: 100px;
+
+
+@media screen and (min-width: 990px) {
+  .navbar-wagon img {
+    height: 25px;
+    margin-left: 100px;
+  }
 }
+
+@media screen and (min-width: 481px) and (max-width: 990px) {
+    /* STYLES HERE */
+  .navbar-wagon img {
+    height: 25px;
+    margin-left: -15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+    /* STYLES HERE */
+  .navbar-wagon img {
+    height: 25px;
+    margin-left: -15px;
+  }
+}
+
 
 
 
