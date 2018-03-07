@@ -3,6 +3,6 @@
 
 //= require underscore
 //= require gmaps/google
-
+//= require_relative slider.js
 
 
