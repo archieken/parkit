@@ -10,11 +10,46 @@
      puts "Users made"
 
      puts "Creating Spaces"
+
      Space.create(address: "18 Falcon Grove, London SW11 2ST, UK", price: 1.5, photo: "image", avg_rating: 4.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
      Space.create(address: "9 Glendale Dr, Wimbledon, London SW19 7BG, UK", price: 3.5, photo: "image", avg_rating: 2.5, parking_type: "drive", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
      Space.create(address: "452 Streatham High Rd, London SW16 3NN, UK", price: 4.5, photo: "image", avg_rating: 3.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
      Space.create(address: "St James's Park, Ivy Lodge, London SW1A 2BJ, UK", price: 5.5, photo: "image", avg_rating: 1.5, parking_type: "street", user: User.find_by(email: "ringo@geemail.net"))
+     sleep 1.0
      Space.create(address: "13 Holmewood Rd, London SW2 3RP, UK", price: 1.5, photo: "image", avg_rating: 6.5, parking_type: "drive", user: User.find_by(email: "george@zoohoo.org"))
+     sleep 1.0
+     Space.create(address: "Polígono Industrial Zona Franca Sector B, Carrer 3, 77-111, 08040 Barcelona", price: 1.5, photo: "image", avg_rating: 4.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Av. del Paraŀlel, 76-78, 08001 Barcelona", price: 3.5, photo: "image", avg_rating: 2.5, parking_type: "drive", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Carrer de Marià Labèrnia, s/n, 08032 Barcelona", price: 4.5, photo: "image", avg_rating: 3.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "08024 Barcelona", price: 5.5, photo: "image", avg_rating: 1.5, parking_type: "street", user: User.find_by(email: "ringo@geemail.net"))
+     sleep 1.0
+     Space.create(address: "Parc de la Ciutadella, 08003 Barcelona", price: 1.5, photo: "image", avg_rating: 6.5, parking_type: "drive", user: User.find_by(email: "george@zoohoo.org"))
+     sleep 1.0
+     Space.create(address: "Carrer Comerç, 36, 08003 Barcelona", price: 1.5, photo: "image", avg_rating: 4.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Carrer de Girona, 37, 08010 Barcelona", price: 3.5, photo: "image", avg_rating: 2.5, parking_type: "drive", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Avinguda Diagonal, 420, 08037 Barcelona", price: 4.5, photo: "image", avg_rating: 3.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Avinguda Diagonal, 211, 08018 Barcelona", price: 5.5, photo: "image", avg_rating: 1.5, parking_type: "street", user: User.find_by(email: "ringo@geemail.net"))
+     sleep 1.0
+     Space.create(address: "Carrer de Zamora, 78, 08018 Barcelona", price: 1.5, photo: "image", avg_rating: 6.5, parking_type: "drive", user: User.find_by(email: "george@zoohoo.org"))
+     sleep 1.0
+     Space.create(address: "Carrer de la Ciutat de Granada, 33, 08005 Barcelona", price: 1.5, photo: "image", avg_rating: 4.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Spania, Carrer Mar del Albora, 347, 08918 Badalona, Barcelona", price: 3.5, photo: "image", avg_rating: 2.5, parking_type: "drive", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Carrer de la Indústria, 427, 08918 Badalona, Barcelona", price: 4.5, photo: "image", avg_rating: 3.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     sleep 1.0
+     Space.create(address: "Plaça de l'Assemblea de Catalunya, 1, 08911 Badalona, Barcelona", price: 5.5, photo: "image", avg_rating: 1.5, parking_type: "street", user: User.find_by(email: "ringo@geemail.net"))
+     sleep 1.0
+     Space.create(address: "Ctra. de Mataró, Km. 629, 08911 Badalona, Barcelona", price: 1.5, photo: "image", avg_rating: 6.5, parking_type: "drive", user: User.find_by(email: "george@zoohoo.org"))
      puts "Spaces made"
 
      puts "Creating Reservations"
