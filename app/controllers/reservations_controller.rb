@@ -11,6 +11,10 @@ class ReservationsController < ApplicationController
     reservation = Reservation.new(start: session[:start], end: session[:end], space: space, user: current_user, total_cost: cost)
     reservation.save
 
+    if (current_user.profile.nil?)
+      redirect_to new_profile_path
+    else
     redirect_to profile_path(current_user.profile.id)
+    end
   end
 end
