@@ -1,0 +1,53 @@
+.multi-item-carousel{
+
+    .img-responsive {
+      img {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+
+
+  .carousel-inner{
+    > .item{
+      transition: 900ms ease-in-out left;
+    }
+    .active{
+      &.left{
+        left:-33%;
+      }
+      &.right{
+        left:33%;
+      }
+    }
+    .next{
+      left: 33%;
+    }
+    .prev{
+      left: -33%;
+    }
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      > .item{
+        // use your favourite prefixer here
+        transition: 800ms ease-in-out left;
+        transition: 800ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none!important;
+      }
+    }
+  }
+  .carouse-control{
+    &.left, &.right{
+      background-image: none;
+    }
+  }
+}
+
+// non-related styling:
+
+h1{
+
+  text-align: center;
+}
+
+
