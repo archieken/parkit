@@ -23,6 +23,10 @@ gem 'carrierwave', '~> 1.2'
 gem 'coffee-rails'
 gem 'gmaps4rails'
 
+#for facebook signin
+gem 'omniauth-facebook'
+gem 'koala'
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
