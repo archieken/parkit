@@ -1,18 +1,8 @@
-<%= form_for(@profile) do |p| %>
-  <%= p.label :first_name %>
-  <%= p.text_field :first_name %>
-
-  <%= p.label :last_name %>
-  <%= p.text_field :last_name %>
-
-  <%= p.label :phone %>
-  <%= p.text_field :phone %>
-
-  <%= p.label :avatar %>
-  <%= p.text_field :avatar %>
-
-  <%= p.label :description %>
-  <%= p.text_field :description %>
-
-  <%= p.submit %>
+<%= simple_form_for (@profile) do |p| %>
+  <%= p.input :first_name, label: "First name"%>
+  <%= p.input :last_name, label: "Last name" %>
+  <%= p.input :phone, label: "Phone number" %>
+  <%= p.input :avatar, label: "Photo" %>
+  <%= p.input :description, label: "Special details" %>
+  <%= p.button :submit %>
 <% end %>

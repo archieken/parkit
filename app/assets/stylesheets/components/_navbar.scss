@@ -14,18 +14,40 @@
 }
 
 /* Logo */
-.navbar-wagon img {
-  height: 25px;
-  margin-left: 100px;
+
+
+@media screen and (min-width: 990px) {
+  .logo {
+    height: 25px;
+    margin-left: 100px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 990px) {
+    /* STYLES HERE */
+  .logo {
+    height: 25px;
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+    /* STYLES HERE */
+  .logo {
+    height: 25px;
+    margin-left: 0px;
+  }
 }
 
 
 
+
 /* User Avatar */
-.navbar-wagon .avatar {
+.avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  margin-left: 15px;
 }
 
 /* Right section */
@@ -34,24 +56,28 @@
   align-items: center;
   justify-content: space-between;
   margin-right: 100px;
+  color:white;
 }
 
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
-
-  color: #616668;
+  color: white;
   font-size: 15px;
   font-family: 'Montserrat';
   font-weight: 600;
+  margin: 0 15px;
 }
 .navbar-wagon-link:hover {
-  color: grey;
+  opacity: 50%;
   text-decoration: none;
 }
 
@@ -84,4 +110,14 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+a {
+  color:white;
+  font-family: Montserrat;
+}
+
+a:hover {
+  opacity: 50%;
+  text-decoration: none;
 }

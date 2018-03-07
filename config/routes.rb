@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #  GET   ‘/users/:id/edit’   =>    users#edit’
   # PATCH   ‘/users/:id’   => users#update’
 
-  resources :spaces, only: [:index, :new, :create, :edit, :update] do
+  resources :spaces, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :reservations, only: [:index, :new, :create]
   end
 
