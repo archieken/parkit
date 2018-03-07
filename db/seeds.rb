@@ -10,11 +10,11 @@
      puts "Users made"
 
      puts "Creating Spaces"
-     Space.create(address: "London, UK", price: 1.5, photo: "image", avg_rating: 4.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
-     Space.create(address: "Paris", price: 3.5, photo: "image", avg_rating: 2.5, parking_type: "drive", user: User.find_by(email: "john@yadoo.com"))
-     Space.create(address: "Berlin", price: 4.5, photo: "image", avg_rating: 3.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
-     Space.create(address: "New York", price: 5.5, photo: "image", avg_rating: 1.5, parking_type: "street", user: User.find_by(email: "ringo@geemail.net"))
-     Space.create(address: "Cheltenham, UK", price: 1.5, photo: "image", avg_rating: 6.5, parking_type: "drive", user: User.find_by(email: "george@zoohoo.org"))
+     Space.create(address: "18 Falcon Grove, London SW11 2ST, UK", price: 1.5, photo: "image", avg_rating: 4.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     Space.create(address: "9 Glendale Dr, Wimbledon, London SW19 7BG, UK", price: 3.5, photo: "image", avg_rating: 2.5, parking_type: "drive", user: User.find_by(email: "john@yadoo.com"))
+     Space.create(address: "452 Streatham High Rd, London SW16 3NN, UK", price: 4.5, photo: "image", avg_rating: 3.5, parking_type: "garage", user: User.find_by(email: "john@yadoo.com"))
+     Space.create(address: "St James's Park, Ivy Lodge, London SW1A 2BJ, UK", price: 5.5, photo: "image", avg_rating: 1.5, parking_type: "street", user: User.find_by(email: "ringo@geemail.net"))
+     Space.create(address: "13 Holmewood Rd, London SW2 3RP, UK", price: 1.5, photo: "image", avg_rating: 6.5, parking_type: "drive", user: User.find_by(email: "george@zoohoo.org"))
      puts "Spaces made"
 
      puts "Creating Reservations"
