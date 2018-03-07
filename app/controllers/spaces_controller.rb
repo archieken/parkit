@@ -11,7 +11,6 @@ class SpacesController < ApplicationController
      session[:end] = end_date
      session[:location] = location
    if (location.blank?)
-    raise
      @spaces = Space.where.not(latitude: nil, longitude: nil)
 
      @markers = @spaces.map do |space|
@@ -25,7 +24,7 @@ class SpacesController < ApplicationController
      end
    else
 
-     space_not_null = Space.all.where.not(latitude: nil, longitude: nil)
+     spaces_not_null = Space.all.where.not(latitude: nil, longitude: nil)
      @spaces = spaces_not_null.near(location, params[:distance].to_i)
 
 
