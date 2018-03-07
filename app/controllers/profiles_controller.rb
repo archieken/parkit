@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
 
   def show
-    profile = Profile.find(current_user.profile.id)
-    if profile.nil?
+    if current_user.profile.nil?
       new
     else
+      profile = Profile.find(current_user.profile.id)
       @profile = profile
     end
   end
