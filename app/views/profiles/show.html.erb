@@ -42,7 +42,9 @@
           <div class="col-lg-3">
           <h5><b>Price: <%=space.price%>€</b></h5>
           <h6><%=space.avg_rating%>/100</h6>
-          <h6><%=space.reservation.user.fullname%></h6>
+          <% if !space.reservation.nil? %>
+            <h6><%=space.reservation.user.fullname%></h6>
+          <% end %>
           <h4><%= link_to "Delete", space_path(space.id), method: :delete %></h4>
           <hr>
         </div>
