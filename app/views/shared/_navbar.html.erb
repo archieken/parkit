@@ -45,7 +45,7 @@
         <% else %>
           <li><%= link_to t(profile_path(current_user.id), default: "My profile")%>
         <% end %>
-        <li><%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_space_path %></li>
+        <li><%= link_to t(new_space_path, default: "Create new parking"), new_space_path %></li>
         <li><%= link_to destroy_user_session_path, method: :delete do %>
         <%= t(".sign_out", default: "Log out") %>
       <% end %></li>

@@ -78,6 +78,7 @@
 }
 .navbar-wagon-link:hover {
   opacity: 50%;
+  color:lightgrey;
   text-decoration: none;
 }
 
@@ -113,11 +114,12 @@
 }
 
 a {
-  color:white;
+  color:black;
   font-family: Montserrat;
 }
 
 a:hover {
   opacity: 50%;
+  color:grey;
   text-decoration: none;
 }
