@@ -12,22 +12,32 @@ class SpacesController < ApplicationController
      session[:location] = location
    if (location.blank?)
      @spaces = Space.where.not(latitude: nil, longitude: nil)
-     @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
-       marker.lat space.latitude
-       marker.lng space.longitude
-       marker.infowindow render_to_string(partial: "/spaces/map_box", locals: { space: space })
+
+     @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
+      }
+
+
      end
    else
-     spaces_not_null = Space.all.where.not(latitude: nil, longitude: nil)
+
+     space_not_null = Space.all.where.not(latitude: nil, longitude: nil)
      @spaces = spaces_not_null.near(location, params[:distance].to_i)
 
-     @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
-       marker.lat space.latitude
-       marker.lng space.longitude
-       marker.infowindow render_to_string(partial: "/spaces/map_box", locals: { space: space })
-      end
+
+     @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
+      }
+
     end
   end
+end
 
  def new
    @space = Space.new
