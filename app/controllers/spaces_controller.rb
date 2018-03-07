@@ -25,7 +25,7 @@ class SpacesController < ApplicationController
       end
     end
   end
- end
+
 
  def new
    @space = Space.new
