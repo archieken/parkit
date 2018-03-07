@@ -41,13 +41,12 @@
 <div class="screen">
 
   <div class="homepage-content">
-    <h2>RENT A PARKING NEAR YOU</h2>
-
+    <h2>RENT A PARKING SPACE NEAR YOU</h2>
 
     <form class="homepage-form" action=<%=spaces_path%>>
       <input type="text" name="location" placeholder="LOCATION" class="location-input">
-      <input type="date" name="start" placeholder="Date From">
-      <input type="date" name="end" placeholder="Date To">
+      <input type="date" name="start" value=<%=Date.today.to_s%>>
+      <input type="date" name="end" value=<%=(Date.today + 1.days).to_s%>>
       <input type="submit" value="SEARCH" class="button">
 
       <div class="slidecontainer">
