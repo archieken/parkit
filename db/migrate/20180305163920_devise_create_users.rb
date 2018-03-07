@@ -9,6 +9,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :fullname, null: false, default: ""
       t.boolean :has_parking, null: false, default: false
 
+      t.string :provider
+      t.string :uid
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
