@@ -14,10 +14,10 @@
     <div class="navbar-wagon-item">
       <%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
+      |
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
         <%= t(".sign_out", default: "LOG OUT") %>
       <% end %>
-      <%= link_to "profile_path" do %>
 
       <%= link_to profile_path(current_user.id) do %>
 
@@ -41,9 +41,15 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <% if current_user.nil? %>
+
+        <% else %>
+          <li><%= link_to t(profile_path(current_user.id), default: "My profile")%>
+        <% end %>
+        <li><%= link_to t(new_space_path, default: "Create new parking"), new_space_path %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+        <%= t(".sign_out", default: "Log out") %>
+      <% end %></li>
       </ul>
     </div>
   </div>

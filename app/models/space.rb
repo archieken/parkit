@@ -3,7 +3,7 @@ class Space < ApplicationRecord
   validates :address, presence: true
   validates :price, presence: true
   validates :parking_type, presence: true, inclusion: ["garage", "drive", "street"]
-  has_many :reservations, dependent: :destroy
+  has_one :reservation, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 
