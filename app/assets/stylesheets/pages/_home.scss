@@ -8,6 +8,14 @@
   background-image: linear-gradient(-225deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 50%), asset-url('greymap.JPG');
 }
 
+.create_parking_page {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .homepage-form {
   margin-bottom: 10%;
 }
@@ -17,6 +25,37 @@
   opacity: 50%;
   font-weight: 600;
   padding: 15px 30px;
+  border: none;
+}
+
+@media screen and (min-width: 769px) {
+  #new_space {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* STYLES HERE */
+  #new_space {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+    /* STYLES HERE */
+  #new_space {
+    width: 90%;
+  }
+}
+
+
+
+#space_parking_type, #space_photo, #location-input {
+  color: rgba(57,57,57,1);
+  opacity: 50%;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: none;
 }
 
 .location-input::placeholder {
