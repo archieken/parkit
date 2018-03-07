@@ -2,16 +2,15 @@ class SpacesController < ApplicationController
 
 
  def index
-   location = params[:location]
+    location = params[:location]
      start_date = params[:start]
-     #params[:start] = Date.today.to_s if start_date.blank?
      end_date = params[:end]
-     #params[:end] = Date.today.to_s if end_date.blank?
+     start_date = Date.today if start_date.blank?
+     end_date = Date.today if end_date.blank?
      session[:start] = start_date
      session[:end] = end_date
      session[:location] = location
    if (location.blank?)
-    raise
      @spaces = Space.where.not(latitude: nil, longitude: nil)
 
      @markers = @spaces.map do |space|
@@ -36,7 +35,6 @@ class SpacesController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
       }
 
-
     end
   end
 end
@@ -53,6 +51,12 @@ end
     else
       render 'new'
     end
+  end
+
+
+  def destroy
+    Space.destroy(params[:id])
+    redirect_to spaces_path
   end
 
   private
