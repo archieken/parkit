@@ -1,6 +1,6 @@
  <form class="search-form" action=<%=spaces_path%> style="display:none">
     <div class="search-form-top">
-      <input type="text" name="location" placeholder="LOCATION" class="search-input">
+      <input type="text" name="location" placeholder="LOCATION" id = "search-input" class="location-input">
       <input type="date" name="start" value=<%=Date.today.to_s%>>
       <input type="date" name="end" value=<%=(Date.today + 1.days).to_s%>>
       <input type="submit" value="SEARCH" class="button" style="display:none">
