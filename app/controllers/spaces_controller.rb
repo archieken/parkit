@@ -28,7 +28,8 @@ class SpacesController < ApplicationController
    else
 
      spaces_not_null = Space.all.where.not(latitude: nil, longitude: nil)
-     @spaces = spaces_not_null.near(location, params[:distance].to_i)
+     dist= params[:distance].to_i/1000
+     @spaces = spaces_not_null.near(location, dist)
 
 
      @markers = @spaces.map do |space|
