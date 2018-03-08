@@ -8,7 +8,9 @@
         <p><i class="fa fa-phone fa-fw"></i>1224435534</p>
         <h6>Special details:</h6>
         <p><%= @profile.description%></p>
-        <button><%= link_to "Edit profile", edit_profile_path(current_user.profile.id)%></button>
+        <% if !current_user.profile.nil? %>
+          <button><%= link_to "Edit profile", edit_profile_path(current_user.profile.id)%></button>
+        <% end %>
       </div>
       <div class="col-lg-6">
          <% if @profile.avatar.blank? %>
