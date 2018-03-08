@@ -3,6 +3,10 @@ class SpacesController < ApplicationController
 
 
  def index
+  profile = Profile.find(current_user.profile.id)
+  @profile = profile
+  current_user.avatar = @profile.avatar
+
     location = params[:location]
      start_date = params[:start]
      end_date = params[:end]
@@ -73,6 +77,9 @@ class SpacesController < ApplicationController
 
  def new
    @space = Space.new
+   profile = Profile.find(current_user.profile.id)
+   @profile = profile
+   current_user.avatar = @profile.avatar
  end
 
   def create

@@ -1,6 +1,8 @@
 class ReservationsController < ApplicationController
   def new
-
+    profile = Profile.find(current_user.profile.id)
+    @profile = profile
+    current_user.avatar = @profile.avatar
   end
 
   def create
