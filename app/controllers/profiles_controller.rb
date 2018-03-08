@@ -7,6 +7,9 @@ class ProfilesController < ApplicationController
       profile = Profile.find(current_user.profile.id)
       @profile = profile
       current_user.avatar = @profile.avatar
+      if current_user.fullname == ''
+        current_user.fullname = @profile.first_name
+      end
     end
   end
 
@@ -16,7 +19,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    profile =Profile.new(profile_params)
+    profile = Profile.new(profile_params)
     profile.user_id = current_user.id
     if profile.save
       current_user.avatar = profile.avatar
@@ -29,11 +32,14 @@ class ProfilesController < ApplicationController
   def edit
     @profile = Profile.find(current_user.profile.id)
     current_user.avatar = @profile.avatar
+    current_user.fullname = @profile.first_name
   end
 
   def update
-    @profile= current_user.profile
-    if @profile =Profile.update(profile_params)
+    @profile = current_user.profile
+    if Profile.update(profile_params)
+      current_user.avatar = @profile.avatar
+      current_user.fullname = @profile.first_name
       redirect_to profile_path(@profile)
     else
       render :edit

@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   # GET   ‘/spaces/:id/edit’   =>    ‘spaces#edit’
   # PATCH   ‘/spaces/:id’   => ‘spaces#update’
 
+  resources :reservations, only: [:destroy]
+
+
   resources :profiles, only: [:show, :new, :create, :edit, :update]
 
   # profiles: new, create, index, edit, update
