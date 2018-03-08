@@ -3,10 +3,12 @@ class SpacesController < ApplicationController
 
 
  def index
-  if !current_user.nil?
-    profile = Profile.find(current_user.profile.id)
-    @profile = profile
-    current_user.avatar = @profile.avatar
+  if current_user
+    if current_user.profile
+      profile = Profile.find(current_user.profile.id)
+      @profile = profile
+      current_user.avatar = @profile.avatar
+    end
   end
 
     location = params[:location]
@@ -80,9 +82,13 @@ class SpacesController < ApplicationController
 
  def new
    @space = Space.new
-   profile = Profile.find(current_user.profile.id)
-   @profile = profile
-   current_user.avatar = @profile.avatar
+   if current_user.profile.nil?
+      redirect_to new_profile_path
+   else
+     profile = Profile.find(current_user.profile.id)
+     @profile = profile
+     current_user.avatar = @profile.avatar
+   end
  end
 
   def create
