@@ -1,3 +1,71 @@
+ <style>
+
+.search-form-top {
+
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.search-input {
+  width: 50%;
+}
+
+
+#distance {
+  align-self: center;
+}
+
+
+ </style>
+
+
+ <form class="search-form" action=<%=spaces_path%> style="display:none">
+        <div class="search-form-top">
+      <input type="text" name="location" placeholder="LOCATION" class="search-input">
+      <input type="date" name="start" value=<%=Date.today.to_s%>>
+      <input type="date" name="end" value=<%=(Date.today + 1.days).to_s%>>
+      <input type="submit" value="SEARCH" class="button" style="display:none">
+      <div id="distance">Distance: <span id="demo"></span></div>
+      </div>
+
+      <div class="slidecontainer">
+      <input type="range" name="distance" min="1" max="30" value="10" class="slider" id="myRange">
+      </div>
+      </form>
+
+
+
+ <script type="text/javascript">
+function hideSearch() {
+    var x = document.querySelector(".search-form");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div
   id="map"
   style='width: 100%;
@@ -24,7 +92,7 @@
                       <% unless space.photo.url %>
                         <%# cl_image_tag "v1520370914/non_existing.jpg" %>
                       <% else %>
-                        <%= cl_image_tag space.photo %>
+                        <%# cl_image_tag space.photo %>
                       <% end %>
 
                     </div>
