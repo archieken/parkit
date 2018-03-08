@@ -4,13 +4,20 @@
  <div class="container">
           <div class="row">
 
-            <div class="col-lg-6">
-              <img src="https://openclipart.org/download/277089/Female-Avatar-5.svg" style="width:100%" height= 200px alt="Avatar">
-           </div>
           <div class="col-lg-6">
             <h2><%= @profile.first_name %> <%= @profile.last_name %></h2>
           <p><i class="fa fa-envelope fa-fw"></i><%= @profile.phone%></p>
           <p><i class="fa fa-phone fa-fw"></i>1224435534</p>
+          <h6>Special details:</h6>
+          <p><%= @profile.description%></p>
+          <h4><%= link_to "Edit profile", edit_profile_path(current_user.profile.id)%></h4>
+          </div>
+           <div class="col-lg-6">
+             <% if @profile.avatar.nil? %>
+               <img src="https://openclipart.org/download/277089/Female-Avatar-5.svg" style="width:100%;height: 200px" alt="Avatar">
+             <% else  %>
+               <div style="width:100%;height: 200px" ><%= image_tag(@profile.avatar) %></div>
+             <% end%>
           </div>
         </div>
 
@@ -38,12 +45,14 @@
       <div class="row">
         <% if !current_user.spaces.blank? %>
         <h2><i class="fa fa-car fa-fw"></i>Your Parking Spaces</h2>
-          <% for space in current_user.spaces.sort_by{|reservation| reservation.start}%>
+          <% for space in current_user.spaces.sort_by{|space| space.parking_type}%>
           <div class="col-lg-3">
           <h5><b>Price: <%=space.price%>€</b></h5>
-          <h6><%=space.avg_rating%>/100</h6>
+          <h6>rating:<%=space.avg_rating%>/100</h6>
           <% if !space.reservation.nil? %>
             <h6><%=space.reservation.user.fullname%></h6>
+            <h6>reservation starts:<%=space.reservation.start%></h6>
+            <h6>reservation ends:<%=space.reservation.end%></h6>
           <% end %>
           <h4><%= link_to "Delete", space_path(space.id), method: :delete %></h4>
           <hr>
