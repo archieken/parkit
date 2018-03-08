@@ -3,9 +3,11 @@ class SpacesController < ApplicationController
 
 
  def index
-  profile = Profile.find(current_user.profile.id)
-  @profile = profile
-  current_user.avatar = @profile.avatar
+  if !current_user.nil?
+    profile = Profile.find(current_user.profile.id)
+    @profile = profile
+    current_user.avatar = @profile.avatar
+  end
 
     location = params[:location]
      start_date = params[:start]
