@@ -1,16 +1,17 @@
  <form class="search-form" action=<%=spaces_path%> style="display:none">
-        <div class="search-form-top">
+    <div class="search-form-top">
       <input type="text" name="location" placeholder="LOCATION" class="search-input">
       <input type="date" name="start" value=<%=Date.today.to_s%>>
       <input type="date" name="end" value=<%=(Date.today + 1.days).to_s%>>
       <input type="submit" value="SEARCH" class="button" style="display:none">
-      <div id="distance">Distance: <span id="demo"></span></div>
+      <div id="distance">Distance: <span id="demo"></span>
       </div>
+    </div>
 
       <div class="slidecontainer">
       <input type="range" name="distance" min="1" max="30" value="10" class="slider" id="myRange">
       </div>
-      </form>
+  </form>
 
 
 <div

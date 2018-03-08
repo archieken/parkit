@@ -25,15 +25,15 @@ class SpacesController < ApplicationController
 
       case space.price
         when 0..5
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513871/Pin_Copy_15_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519266/Pin_Copy_15_2x_1.png'}
         when 6..10
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513806/Pin_Copy_12_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519288/Pin_Copy_16_2x.png'}
         when 11..15
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513688/Pin_Copy_11_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519299/Pin_Copy_17_2x.png'}
         when 16..20
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513834/Pin_Copy_13_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519308/Pin_Copy_18_2x.png'}
         else
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513844/Pin_Copy_14_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519318/Pin_Copy_19_2x.png'}
       end
 
 
@@ -57,15 +57,15 @@ class SpacesController < ApplicationController
 
       case space.price
         when 0..5
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513871/Pin_Copy_15_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519266/Pin_Copy_15_2x_1.png'}
         when 6..10
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513806/Pin_Copy_12_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519288/Pin_Copy_16_2x.png'}
         when 11..15
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513688/Pin_Copy_11_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519299/Pin_Copy_17_2x.png'}
         when 16..20
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513834/Pin_Copy_13_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519308/Pin_Copy_18_2x.png'}
         else
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513844/Pin_Copy_14_2x.png'}
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519318/Pin_Copy_19_2x.png'}
       end
      {
         icon: icon,
