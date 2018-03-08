@@ -27,6 +27,9 @@ gem 'gmaps4rails'
 gem 'omniauth-facebook'
 gem 'koala'
 
+#for google signin
+gem "omniauth-google-oauth2", "~> 0.2.1"
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end

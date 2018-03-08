@@ -17,6 +17,7 @@ class SpacesController < ApplicationController
 
      @markers = @spaces.map do |space|
       {
+        icon: {url: 'https://secure.gravatar.com/avatar/ca0a426b5663c16a2259eddbd7e8a4a6?s=40&d=identicon&r=g'},
         lat: space.latitude,
         lng: space.longitude,
         infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
