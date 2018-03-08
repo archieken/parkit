@@ -7,9 +7,6 @@ class ProfilesController < ApplicationController
       profile = Profile.find(current_user.profile.id)
       @profile = profile
       current_user.avatar = @profile.avatar
-      if current_user.fullname == ''
-        current_user.fullname = @profile.first_name
-      end
     end
   end
 
@@ -32,14 +29,12 @@ class ProfilesController < ApplicationController
   def edit
     @profile = Profile.find(current_user.profile.id)
     current_user.avatar = @profile.avatar
-    current_user.fullname = @profile.first_name
   end
 
   def update
     @profile = current_user.profile
     if Profile.update(profile_params)
       current_user.avatar = @profile.avatar
-      current_user.fullname = @profile.first_name
       redirect_to profile_path(@profile)
     else
       render :edit
@@ -49,7 +44,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :phone, :description, :avatar)
+    params.require(:profile).permit(:phone, :description, :avatar)
   end
 
 end
