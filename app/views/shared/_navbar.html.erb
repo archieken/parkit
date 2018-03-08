@@ -12,7 +12,10 @@
       <!-- Links when logged in -->
 
     <div class="navbar-wagon-item">
-      <%= link_to t(new_space_path, default: "POST MY SPOT"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  
+      <%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      |
+       <button onclick="hideSearch()" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" aria-hidden="true"></i></button>
 
       |
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
@@ -30,6 +33,7 @@
         <% end %>
 
     </div>
+
 
 
     <% else %>

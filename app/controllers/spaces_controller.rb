@@ -20,14 +20,27 @@ class SpacesController < ApplicationController
      @spaces = Space.where.not(latitude: nil, longitude: nil)
 
      @markers = @spaces.map do |space|
+
+      case space.price
+        when 0..5
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513871/Pin_Copy_15_2x.png'}
+        when 6..10
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513806/Pin_Copy_12_2x.png'}
+        when 11..15
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513688/Pin_Copy_11_2x.png'}
+        when 16..20
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513834/Pin_Copy_13_2x.png'}
+        else
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513844/Pin_Copy_14_2x.png'}
+      end
+
+
       {
-        icon: {url: 'https://secure.gravatar.com/avatar/ca0a426b5663c16a2259eddbd7e8a4a6?s=40&d=identicon&r=g'},
+        icon: icon,
         lat: space.latitude,
         lng: space.longitude,
         infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
       }
-
-
      end
    else
 
@@ -36,12 +49,28 @@ class SpacesController < ApplicationController
 
 
      @markers = @spaces.map do |space|
-      {
+
+
+
+
+      case space.price
+        when 0..5
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513871/Pin_Copy_15_2x.png'}
+        when 6..10
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513806/Pin_Copy_12_2x.png'}
+        when 11..15
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513688/Pin_Copy_11_2x.png'}
+        when 16..20
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513834/Pin_Copy_13_2x.png'}
+        else
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513844/Pin_Copy_14_2x.png'}
+      end
+     {
+        icon: icon,
         lat: space.latitude,
         lng: space.longitude,
         infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
       }
-
     end
   end
  end
