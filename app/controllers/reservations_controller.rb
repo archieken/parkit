@@ -19,4 +19,9 @@ class ReservationsController < ApplicationController
     redirect_to profile_path(current_user.profile.id)
     end
   end
+
+  def destroy
+    Reservation.destroy(params[:id])
+    redirect_to profile_path
+  end
 end

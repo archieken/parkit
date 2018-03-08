@@ -12,7 +12,7 @@
       <!-- Links when logged in -->
 
     <div class="navbar-wagon-item">
-  
+
       <%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
       |
        <button onclick="hideSearch()" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -24,11 +24,8 @@
 
         <%= link_to profile_path(current_user.id) do %>
 
-            <% if current_user.nil? || current_user.avatar.blank? %>
-
-          <%= image_tag "https://cdn.shopify.com/s/files/1/1000/0694/products/MH-PNTS-16-C_b_1024x1024.jpg?v=1451403267", class: "avatar dropdown-toggle"%>
-            <%else%>
-            <%= image_tag current_user.avatar, class: "avatar dropdown-toggle"%>
+            <% if !current_user.avatar.nil? %>
+              <%= image_tag current_user.avatar, class: "avatar dropdown-toggle"%>
             <%end%>
         <% end %>
 
@@ -55,15 +52,24 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <% if !current_user.nil? %>
-          <li><%= link_to t(profile_path(current_user.id), default: "My profile")%>
-        <% end %>
-        <li><%= link_to t(new_space_path, default: "Create new parking"), new_space_path %>
-        </li>
-        <li><%= link_to destroy_user_session_path, method: :delete do %>
-          <%= t(".sign_out", default: "Log out") %>
+        <% if user_signed_in? %>
+          <% if !current_user.nil? %>
+            <li><%= link_to t(profile_path(current_user.id), default: "My profile")%>
           <% end %>
-        </li>
+          <li><%= link_to t(new_space_path, default: "Create new parking"), new_space_path %>
+          </li>
+          <li><%= link_to destroy_user_session_path, method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        <% else %>
+          <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path%>
+          </li>
+          <li><%= link_to "Find a space", root_path%>
+          </li>
+          <li><%= link_to "How it works", about_path%>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

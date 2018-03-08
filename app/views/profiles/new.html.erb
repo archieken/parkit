@@ -1,12 +1,10 @@
 <div class="container">
 
-  <h1>Create a Parkit profile to continue</h1>
+  <h1>Info needed to continue</h1>
   <%= simple_form_for (@profile) do |p| %>
-    <%= p.input :first_name, label: "First name"%>
-    <%= p.input :last_name, label: "Last name" %>
     <%= p.input :phone, label: "Phone number" %>
-    <%= p.input :avatar, label: "Photo" %>
+    <%= p.input :avatar, label: "Profile photo" %>
     <%= p.input :description, label: "Special details" %>
-    <%= p.button :submit %>
+    <%= p.button :submit, "Confirm" %>
   <% end %>
 </div>
