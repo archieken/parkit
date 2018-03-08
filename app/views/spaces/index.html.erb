@@ -37,9 +37,9 @@
                       <%= link_to "Book", space_reservations_path(space), method: :post, class: "btn btn-success" %>
 
                       <% unless space.photo.url %>
-                        <%# cl_image_tag "v1520370914/non_existing.jpg" %>
+                        <%= cl_image_tag "v1520370914/non_existing.jpg" %>
                       <% else %>
-                        <%# cl_image_tag space.photo %>
+                        <%= cl_image_tag space.photo %>
                       <% end %>
 
                     </div>
