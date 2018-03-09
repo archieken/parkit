@@ -146,6 +146,19 @@
   padding: 25px;
 }
 
+.blank-card {
+  height: 350px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dates {
   display: inline-block;
   font-family: 'Montserrat';
