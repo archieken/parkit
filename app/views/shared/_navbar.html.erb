@@ -14,7 +14,7 @@
     <div class="navbar-wagon-item">
       <%= link_to t(new_space_path, default: "+ post a park"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-       <div class="search-button">          
+       <div class="search-button">
         <button onclick="hideSearch()" class="navbar-wagon-item navbar-wagon-link" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" style="margin-right: 10px" aria-hidden="true"></i>  search</button>
        </div>
 
@@ -39,18 +39,10 @@
       <!-- Login link (when logged out) -->
 
       <%= link_to t(".sign_in", default: "login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      |
-
-<button onclick="hideSearch()" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" aria-hidden="true"></i></button>
-
 
       <div class="search-button">
-      |
-<button onclick="hideSearch()" style="border:none;
-  background-color:#3C3C3C;"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </div>
-      |
-
+        <button onclick="hideSearch()" class="navbar-wagon-item navbar-wagon-link" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" style="margin-right: 10px" aria-hidden="true"></i>  search</button>
+       </div>
 
       <%= link_to "how it works", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
