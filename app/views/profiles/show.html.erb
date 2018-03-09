@@ -9,11 +9,11 @@
         <% if @profile.avatar.nil? %>
           <div class="profile-pic" style="background-image: asset-url('avatar.png')"></div>
         <% else  %>
-          <div class="profile-pic" style="background-image: asset-url('<%= @profile.avatar %>')"></div>
+          <div class="profile-pic" style="background-image: url('<%= current_user.avatar %>')"></div>
         <% end%>
 
         <div class="name-rating">
-          <h3 class="profile-title"><%= @profile.first_name %></h3>
+          <h3 class="profile-title"><%= current_user.fullname %></h3>
           <div>
             <div class="star"></div>
             <div class="star"></div>
@@ -32,7 +32,7 @@
     </div>
 
     <!-- BUTTON TO EDIT PROFILE -->
-    <%= link_to edit_profile_path(current_user.profile.id) do %>
+    <%= link_to edit_profile_path(current_user.id) do %>
       <div class="button add-park">
         <h5>EDIT PROFILE</h5>
       </div>
@@ -61,12 +61,13 @@
             <h4 class="number-email" style="margin-top: 10px; margin-bottom: 20px">$<%= reservation.space.price %></h4>
             <h5 class="small-light-header">Dates Booked</h5>
             <h5 class="dates"><%= reservation.start %></h5><div class="arrow"></div><h5 class="dates"><%= reservation.end %></h5>
+            <h4 class="section-header" style="color:#FF6B6B!important; margin-bottom: -10px"><%= link_to "Cancel booking", reservation_path(reservation.id),:style=> 'color:#FF6B6B', method: :delete %></h4>
 
             <div class="small-profile-person">
               <div style="display: flex">
                 <div class="small-profile-pic"></div>
                 <div class="small-name-rating">
-                  <h3 class="profile-title" style="color: #393939; font-size: 20px"><%= reservation.user.fullname %></h3>
+                  <h3 class="profile-title" style="color: #393939; font-size: 20px"><%= reservation.space.user.fullname %></h3>
                   <div style="margin-top: -10px">
                     <div class="black-star"></div>
                     <div class="black-star"></div>
@@ -96,34 +97,7 @@
 
     <% else %>
 
-      <div class="bk-lst-card">
-          <div class="book-card-detail">
-            <h4 class="number-email">Carrer d'En Grassot<br>101, 08025 Barcelona</h4>
-            <h4 class="number-email" style="margin-top: 10px; margin-bottom: 30px">$22</h4>
-            <h5 class="small-light-header">Dates Booked</h5>
-            <h5 class="dates">20-05-2018</h5><div class="arrow"></div><h5 class="dates">24-05-2018</h5>
-
-
-            <div class="small-profile-person">
-              <div style="display: flex">
-                <div class="small-profile-pic"></div>
-                <div class="small-name-rating">
-                  <h3 class="profile-title" style="color: #393939; font-size: 20px">JANE DOE</h3>
-                  <div style="margin-top: -10px">
-                    <div class="black-star"></div>
-                    <div class="black-star"></div>
-                    <div class="black-star"></div>
-                    <div class="black-star"></div>
-                    <div class="black-star"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="blue-streak"></div>
-              <div class="call"></div>
-            </div>
-          </div>
-          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')"></div>
-      </div>
+      <h3>You have no bookings yet</h3>
 
     <% end %>
 
@@ -182,17 +156,7 @@
       <% end %>
 
     <% else %>
-      <div class="bk-lst-card">
-        <div class="book-card-detail">
-          <h4 class="number-email">Carrer d'En Grassot</h4>
-          <h4 class="number-email" style="margin-top: 10px; margin-bottom: 30px">$22</h4>
-          <div class="button add-park edit-listing" style="height: 50px; padding:20px; padding-left: 30px; width: 250px;">
-            <h6>EDIT LISTING</h6>
-          </div>
-        </div>
-        <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')";'>
-        </div>
-      </div>
+      <h3>You have no bookings yet</h3>
     <% end %>
 
   </div>
