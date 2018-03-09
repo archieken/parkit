@@ -22,7 +22,7 @@
 
 
 <div class="container">
-  <h1>Find more parking spaces</h1>
+  <h1>CLOSEST PARKING SPACES</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel">
@@ -32,16 +32,17 @@
               <div class="item <%= 'item active' if i.zero? %>">
             <% group.each do |space| %>
                 <div class="col-xs-4">
+                  <div class="carousel-info">
+                    <%= link_to "BOOK", space_reservations_path(space), method: :post, class: "btn btn-success btn-xs" %>
+                  </div>
+
+
                     <div class="img-responsive">
-
-                      <%= link_to "Book", space_reservations_path(space), method: :post, class: "btn btn-success" %>
-
                       <% unless space.photo.url %>
                         <%= cl_image_tag "v1520370914/non_existing.jpg" %>
                       <% else %>
-                        <%= cl_image_tag space.photo %>
+                        <%= cl_image_tag space.photo%>
                       <% end %>
-
                     </div>
                 </div>
             <% end %>
@@ -54,6 +55,7 @@
     </div>
   </div>
 </div>
+
 
 
 
