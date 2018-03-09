@@ -2,7 +2,7 @@
     <div class="container">
     <div class="create_parking_page">
       <%= simple_form_for @space, :html=> { class: 'foobarbaz' } do |f| %>
-        <%= f.input :address, :input_html => {:id => "location-input"}%>
+        <%= f.input :address, :input_html => {:id => "location-input"}%>>
         <%= f.input :price, :placeholder => "0.00€"%>
         <%=f.input :parking_type, collection: ["garage", "public drive", "street", "private drive"]%>
         <%= f.input :photo %>

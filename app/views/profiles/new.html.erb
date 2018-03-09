@@ -1,10 +1,40 @@
-<div class="container">
+  <style>
 
-  <h1>Info needed to continue</h1>
-  <%= simple_form_for (@profile) do |p| %>
-    <%= p.input :phone, label: "Phone number" %>
-    <%= p.input :avatar, label: "Profile photo" %>
-    <%= p.input :description, label: "Special details" %>
-    <%= p.button :submit, "Confirm" %>
-  <% end %>
-</div>
+  .new-profile-form {
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+    margin-top: 100px;
+
+  }
+
+  .parent-to-profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+</style>
+
+
+  <div class="background">
+    <div class="parent-to-profile">
+
+
+      <div class="new-profile-form">
+      <h1>Info needed to continue</h1>
+    <%= simple_form_for (@profile) do |p| %>
+      <div class="row">
+        <div class="col-lg-6">
+          <%= p.input :avatar, label: "Profile photo" %>
+        </div>
+        <div class="col-lg-6">
+          <%= p.input :phone, label: "Phone number" %>
+        </div>
+      </div>
+      <%= p.input :description, label: "Special details" %>
+      <%= p.button :submit, "Confirm", class:'btn btn-success' %>
+    <% end %>
+      </div>
+    </div>
+  </div>
