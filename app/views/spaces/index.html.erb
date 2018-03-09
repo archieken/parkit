@@ -21,9 +21,11 @@
   >
   </div>
    <div class="page-scroll text-center" style="position:absolute; bottom:30px; right: 30px">
-    <a href="#top" class="btn btn-circle">
-      <i class="fa fa-angle-down fa-2x animated"></i>
+    <a href="#top" class="btn btn-circle" >
+      <a href="javascript: document.body.scrollIntoView(false);" class="btn btn-circle"><i class="fa fa-angle-down fa-2x animated"></i>
     </a>
+    </a>
+
   </div>
 </div>
 
@@ -34,7 +36,7 @@
     <div class="row-container"></div>
       <div class="col-md-12">
         <div class="carousel slide multi-item-carousel" id="theCarousel">
-          <div class="carousel-inner">
+          <div class="carousel-inner" id="bottom-page">
 
             <% @spaces.each_slice(3).with_index do|group, i| %>
                 <div class="item <%= 'item active' if i.zero? %>">
