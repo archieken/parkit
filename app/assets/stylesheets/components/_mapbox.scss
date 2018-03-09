@@ -13,11 +13,19 @@
 }
 
 .map_box_child_img_book {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
   margin-top: 10px;
 }
 
 
 .map_box_child_image {
   margin-bottom: 10px !important;
+}
+
+.map_box_child_image img {
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 1px;
 }
 

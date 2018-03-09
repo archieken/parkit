@@ -38,12 +38,6 @@
       </div>
     <% end %>
 
-    <!-- BUTTON TO ADD PARK -->
-    <%= link_to new_space_path() do %>
-      <div class="button add-park">
-        <h5>+ADD PARK</h5>
-      </div>
-    <% end %>
 
   </div>
 
@@ -153,14 +147,15 @@
               <% end %>
             </div>
           </div>
-          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')";'>
+
+          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%=space.latitude.to_s%>,<%=space.longitude.to_s%>&markers=color:purple%7C<%=space.latitude.to_s%>,<%=space.longitude.to_s%>&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')";'>
           </div>
         </div>
 
       <% end %>
 
     <% else %>
-      <h3>You have no bookings yet</h3>
+      <h3>You have no listings yet</h3>
     <% end %>
 
   </div>
