@@ -55,20 +55,20 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
           <% if !current_user.nil? %>
-            <li><%= link_to t(profile_path(current_user.id), default: "My profile")%>
+            <li><%= link_to t(profile_path(current_user.id), default: "my profile")%>
           <% end %>
-          <li><%= link_to t(new_space_path, default: "Create new parking"), new_space_path %>
+          <li><%= link_to t(new_space_path, default: "create new parking"), new_space_path %>
           </li>
           <li><%= link_to destroy_user_session_path, method: :delete do %>
-            <%= t(".sign_out", default: "Log out") %>
+            <%= t(".sign_out", default: "log out") %>
             <% end %>
           </li>
         <% else %>
-          <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path%>
+          <li><%= link_to t(".sign_in", default: "login"), new_user_session_path%>
           </li>
-          <li><%= link_to "Find a space", root_path%>
+          <li><%= link_to "find a space", root_path%>
           </li>
-          <li><%= link_to "How it works", about_path%>
+          <li><%= link_to "how it works", about_path%>
           </li>
         <% end %>
       </ul>
