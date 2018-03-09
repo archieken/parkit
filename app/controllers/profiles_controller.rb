@@ -26,8 +26,12 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(current_user.profile.id)
-    current_user.avatar = @profile.avatar
+    if current_user.profile.nil?
+      new
+    else
+      @profile = Profile.find(current_user.profile.id)
+      current_user.avatar = @profile.avatar
+    end
   end
 
   def update
