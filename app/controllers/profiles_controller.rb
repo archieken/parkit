@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     profile = Profile.new(profile_params)
     profile.user_id = current_user.id
     if profile.save
-      current_user.avatar = profile.avatar
+      current_user.avatar = profile.avatar unless profile.avatar.blank?
       redirect_to profile_path(profile.id)
     else
       render :new
