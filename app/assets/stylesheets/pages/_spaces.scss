@@ -1,15 +1,20 @@
 .search-form-top {
-
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 
-.search-input {
-  width: 50%;
+#search-input {
+  width: 30%;
+}
+
+#search-form-top input {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 
 #distance {
   align-self: center;
+  width: 195px;
 }

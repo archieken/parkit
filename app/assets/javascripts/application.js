@@ -5,5 +5,3 @@
 //= require gmaps/google
 //= require_relative slider.js
 //= require_relative showsearch.js
-
-

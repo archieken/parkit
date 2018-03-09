@@ -1,1 +1,23 @@
 
+.map_box{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  font-family: BebasNeue-Regular;
+}
+
+
+.map_box_child {
+  padding: 10px;
+}
+
+.map_box_child_img_book {
+  margin-top: 10px;
+}
+
+
+.map_box_child_image {
+  margin-bottom: 10px !important;
+}
+

@@ -5,7 +5,7 @@
 
      puts "Creating Users"
      emails = ["john@yadoo.com", "ringo@geemail.net", "george@zoohoo.org", "paul@yadoo.com", "bill@gmail.com", "george@yadoo.com"]
-     names = ["john","paul","ringo","george"]
+     names = ["John Lennon","Paul McCartney","Ringo Star","George W. Bush", "George Harrison"]
      emails.each {|email| User.create(email: email, password: "1234567", fullname: names.sample)}
      puts "Users made"
 
@@ -66,12 +66,12 @@
     names = ["Bill","Jenny","Kyle","Fran","Jess"]
 
     emails.each do |email|
-      Profile.create(first_name: names.sample, last_name: "Morris", phone: "12345567", description: "blablah", avatar: "https://media3.s-nbcnews.com/j/newscms/2014_18/418791/140504-obama-correspondents-dinner-750a_53ba5a0e11b559d8a78cdb2962b30bfd.nbcnews-ux-2880-1000.jpg", user: User.find_by(email: email))
+
+      Profile.create(phone: "12345567", description: "Shazam for food", avatar: "http://siliconvalleyism.com/characters/jian-yang-small.jpg", user: User.find_by(email: email))
+
     end
     puts "Profiles made"
 
-# t.string :first_name
-#       t.string :last_name
 #       t.string :phone
 #       t.text :description
 #       t.string :avatar

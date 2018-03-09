@@ -3,6 +3,14 @@ class SpacesController < ApplicationController
 
 
  def index
+  if current_user
+    if current_user.profile
+      profile = Profile.find(current_user.profile.id)
+      @profile = profile
+      current_user.avatar = @profile.avatar
+    end
+  end
+
     location = params[:location]
      start_date = params[:start]
      end_date = params[:end]
@@ -15,64 +23,29 @@ class SpacesController < ApplicationController
 
      @spaces = Space.where.not(latitude: nil, longitude: nil)
 
-     @markers = @spaces.map do |space|
+     list_spaces = @spaces
 
-      case space.price
-        when 0..5
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513871/Pin_Copy_15_2x.png'}
-        when 6..10
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513806/Pin_Copy_12_2x.png'}
-        when 11..15
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513688/Pin_Copy_11_2x.png'}
-        when 16..20
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513834/Pin_Copy_13_2x.png'}
-        else
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513844/Pin_Copy_14_2x.png'}
-      end
+     @markers = create_markers(list_spaces)
 
 
-      {
-        icon: icon,
-        lat: space.latitude,
-        lng: space.longitude,
-        infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
-      }
-     end
    else
-
      spaces_not_null = Space.all.where.not(latitude: nil, longitude: nil)
-     @spaces = spaces_not_null.near(location, params[:distance].to_i)
-
-
-     @markers = @spaces.map do |space|
-
-
-
-
-      case space.price
-        when 0..5
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513871/Pin_Copy_15_2x.png'}
-        when 6..10
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513806/Pin_Copy_12_2x.png'}
-        when 11..15
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513688/Pin_Copy_11_2x.png'}
-        when 16..20
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513834/Pin_Copy_13_2x.png'}
-        else
-          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_37/v1520513844/Pin_Copy_14_2x.png'}
-      end
-     {
-        icon: icon,
-        lat: space.latitude,
-        lng: space.longitude,
-        infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
-      }
-    end
+     dist= params[:distance].to_i/1000
+     @spaces = spaces_not_null.near(location, dist)
+     list_spaces = @spaces
+     @markers = create_markers(list_spaces)
   end
  end
 
  def new
    @space = Space.new
+   if current_user.profile.nil?
+      redirect_to new_profile_path
+   else
+     profile = Profile.find(current_user.profile.id)
+     @profile = profile
+     current_user.avatar = @profile.avatar
+   end
  end
 
   def create
@@ -96,4 +69,37 @@ class SpacesController < ApplicationController
   def space_params
     params.require(:space).permit(:address, :price, :parking_type, :photo)
   end
+
+
+  def create_markers(spaces)
+
+     spaces.map do |space|
+
+      case space.price
+        when 0..5
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519266/Pin_Copy_15_2x_1.png'}
+        when 6..10
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519288/Pin_Copy_16_2x.png'}
+        when 11..15
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519299/Pin_Copy_17_2x.png'}
+        when 16..20
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519308/Pin_Copy_18_2x.png'}
+        else
+          icon = {url: 'http://res.cloudinary.com/dat5wdshi/image/upload/c_scale,h_30,q_100/v1520519318/Pin_Copy_19_2x.png'}
+      end
+
+
+      {
+        icon: icon,
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: { content: render_to_string(partial: "/spaces/map_box", locals: { space: space }) }
+      }
+     end
+
+    end
+
+
+
+
 end

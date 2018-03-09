@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(version: 20180306133402) do
   enable_extension "plpgsql"
 
   create_table "profiles", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
     t.string "phone"
     t.text "description"
     t.string "avatar"
@@ -62,7 +60,7 @@ ActiveRecord::Schema.define(version: 20180306133402) do
     t.boolean "has_parking", default: false, null: false
     t.string "provider"
     t.string "uid"
-    t.string "avatar"
+    t.string "avatar", default: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909__340.png"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

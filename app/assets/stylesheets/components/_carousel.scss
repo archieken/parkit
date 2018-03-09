@@ -39,12 +39,22 @@
       }
     }
   }
-  .carouse-control{
-    &.left, &.right{
-      background-image: none;
+  .carousel-control{
+    &.right{
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%)!important;
+    }
+
+    &.left{
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%)!important;
     }
   }
 }
+
+
+  .glyphicon {
+    color: darkgrey;
+  }
+
 
 // non-related styling:
 

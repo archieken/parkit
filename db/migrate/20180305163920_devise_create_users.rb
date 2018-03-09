@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       t.string :provider
       t.string :uid
-      t.string :avatar
+      t.string :avatar, default: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909__340.png"
 
       ## Recoverable
       t.string   :reset_password_token

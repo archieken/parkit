@@ -1,28 +1,28 @@
  <form class="search-form" action=<%=spaces_path%> style="display:none">
-        <div class="search-form-top">
-      <input type="text" name="location" placeholder="LOCATION" class="search-input">
-      <input type="date" name="start" value=<%=Date.today.to_s%>>
-      <input type="date" name="end" value=<%=(Date.today + 1.days).to_s%>>
-      <input type="submit" value="SEARCH" class="button" style="display:none">
+    <div class="search-form-top">
+      <input type="text" name="location" id = "search-input" value=<%=params[:location]%> class="location-input">
+      <input type="date" name="start" value=<%=params[:start]%>>
+      <input type="date" name="end" value=<%=params[:end]%>>
       <div id="distance">Distance: <span id="demo"></span></div>
-      </div>
+      <input type="submit" value="SEARCH" class="button">
+    </div>
 
-      <div class="slidecontainer">
-      <input type="range" name="distance" min="1" max="30" value="10" class="slider" id="myRange">
-      </div>
-      </form>
+    <div class="slidecontainer_spaces">
+      <input type="range" name="distance" min="1" max="2000" value="1000" class="slider" id="myRange">
+    </div>
+  </form>
 
 
 <div
   id="map"
   style='width: 100%;
-  height: calc(100vh - 70px);'
+  height: calc(80vh - 70px);'
   data-markers="<%= @markers.to_json %>"
 ></div>
 
 
 <div class="container">
-  <h1>Find more parking spaces.</h1>
+  <h1>Find more parking spaces</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel">
@@ -47,8 +47,6 @@
             <% end %>
               </div>
           <%end%>
-
-
         </div>
         <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
         <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
@@ -56,3 +54,14 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.querySelector(".search-button").style.display = "inline";
+  });
+
+
+</script>

@@ -1,6 +1,8 @@
 class ReservationsController < ApplicationController
   def new
-
+    profile = Profile.find(current_user.profile.id)
+    @profile = profile
+    current_user.avatar = @profile.avatar
   end
 
   def create
@@ -16,5 +18,10 @@ class ReservationsController < ApplicationController
     else
     redirect_to profile_path(current_user.profile.id)
     end
+  end
+
+  def destroy
+    Reservation.destroy(params[:id])
+    redirect_to profile_path
   end
 end
