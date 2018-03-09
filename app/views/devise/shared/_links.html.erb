@@ -19,13 +19,15 @@
 
 
 
-.loginBtn a {
-    color: white;
+.btn-info a {
+    color: white !important;
 }
 
 
 
-
+.loginBtn a {
+    color: white;
+}
 
 
 
@@ -70,15 +72,12 @@
 
 
 
-
-
-
 <%- if controller_name != 'sessions' %>
-  <div class="btn btn-info"><%= link_to "Log in", new_session_path(resource_name) %></div>
+  <div class="btn btn-info" style="color:white;background-color:#8BE78E;border-color:#8BE78E;"><%= link_to "Log in", new_session_path(resource_name) %></div>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <div class="btn btn-info"><%= link_to "Sign up", new_registration_path(resource_name) %></div>
+  <div class="btn btn-info" style="color:white;background-color:#8BE78E;border-color:#8BE78E;"><%= link_to "Sign up", new_registration_path(resource_name) %></div>
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>

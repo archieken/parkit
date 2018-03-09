@@ -1,6 +1,11 @@
  <form class="search-form" action=<%=spaces_path%> style="display:none">
     <div class="search-form-top">
-      <input type="text" name="location" id = "search-input" value=<%=params[:location]%> class="location-input">
+      <input type="text" name="location" id = "search-input"  <% if !params[:location].blank? %> value=<%= params[:location] %>
+      <%else%>
+      value=""
+      <%end%>
+
+      class="location-input">
       <input type="date" name="start" value=<%=params[:start]%>>
       <input type="date" name="end" value=<%=params[:end]%>>
       <div id="distance">Distance: <span id="demo"></span></div>
