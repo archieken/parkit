@@ -1,16 +1,15 @@
  <form class="search-form" action=<%=spaces_path%> style="display:none">
     <div class="search-form-top">
-      <input type="text" name="location" placeholder="LOCATION" id = "search-input" class="location-input">
-      <input type="date" name="start" value=<%=Date.today.to_s%>>
-      <input type="date" name="end" value=<%=(Date.today + 1.days).to_s%>>
-      <input type="submit" value="SEARCH" class="button" style="display:none">
-      <div id="distance">Distance: <span id="demo"></span>
-      </div>
+      <input type="text" name="location" id = "search-input" value=<%=params[:location]%> class="location-input">
+      <input type="date" name="start" value=<%=params[:start]%>>
+      <input type="date" name="end" value=<%=params[:end]%>>
+      <div id="distance">Distance: <span id="demo"></span></div>
+      <input type="submit" value="SEARCH" class="button">
     </div>
 
-      <div class="slidecontainer">
-      <input type="range" name="distance" min="1" max="1000" value="2000" class="slider" id="myRange">
-      </div>
+    <div class="slidecontainer_spaces">
+      <input type="range" name="distance" min="1" max="2000" value="1000" class="slider" id="myRange">
+    </div>
   </form>
 
 
@@ -23,7 +22,7 @@
 
 
 <!-- <div class="container">
-  <h1>Find more parking spaces.</h1>
+  <h1>Find more parking spaces</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel">
@@ -75,7 +74,7 @@
 
 
 <div class="container">
-  <h1>Find more parking spaces.</h1>
+  <h1>Find more parking spaces</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel">

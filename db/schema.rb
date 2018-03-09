@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(version: 20180306133402) do
   enable_extension "plpgsql"
 
   create_table "profiles", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
     t.string "phone"
     t.text "description"
     t.string "avatar"
