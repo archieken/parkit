@@ -1,12 +1,37 @@
+  <style>
+    .foobarbaz {
+      background-color: rgb(0, 0, 0, 0.5);;
+      padding: 20px;
+      margin-top: -20px;
+      color: white;
+    }
+
+
+  </style>
+
+
+
   <div class="background">
     <div class="container">
     <div class="create_parking_page">
       <%= simple_form_for @space, :html=> { class: 'foobarbaz' } do |f| %>
-        <%= f.input :address, :input_html => {:id => "location-input"}%>>
+        <%= f.input :address, :input_html => {:id => "location-input"}%>
+        <div class="row">
+          <div class="col-lg-6">
         <%= f.input :price, :placeholder => "0.00€"%>
-        <%=f.input :parking_type, collection: ["garage", "public drive", "street", "private drive"]%>
-        <%= f.input :photo %>
+        </div>
+          <div class="col-lg-6">
+          <%=f.input :parking_type, collection: ["garage", "public drive", "street", "private drive"]%>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-4">
         <%= f.submit 'CREATE', :class => 'btn btn-success'%>
+        </div>
+          <div class="col-lg-8">
+          <%= f.input :photo, label: false%>
+          </div>
+        </div>
       <% end %>
       </div>
     </div>
