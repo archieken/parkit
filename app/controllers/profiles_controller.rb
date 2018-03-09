@@ -12,15 +12,14 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
-    session[:return_to] ||= request.referer
   end
 
   def create
     profile = Profile.new(profile_params)
     profile.user_id = current_user.id
     if profile.save
-        current_user.avatar = profile.avatar unless profile.avatar.blank?
-        redirect_to session.delete(:return_to)
+      current_user.avatar = profile.avatar unless profile.avatar.blank?
+      redirect_to profile_path(profile.id)
     else
       render :new
     end
@@ -35,7 +34,7 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
     if Profile.update(profile_params)
       current_user.avatar = @profile.avatar
-      redirect_to profile_path(@profile)
+      redirect_to profile_path(@profile.id)
     else
       render :edit
     end
