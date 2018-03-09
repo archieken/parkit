@@ -49,7 +49,7 @@
 
   <div class="bookings-and-listings">
 
-    <h4 class="section-header">Bookings</h4>
+    <h4 class="section-header" style="display: inline-block;">Bookings:</h4>
 
     <% if !current_user.reservations.blank? %>
 
@@ -97,11 +97,15 @@
 
     <% else %>
 
-      <h3>You have no bookings yet</h3>
+      <h4 class="section-header" style="display: inline-block; color: #393939""> Currently no Bookings</h4>
+      <div class="blank-card">
+        <i class="fa fa-search" class="section-header"></i>
+        <%= link_to "Search Parking Spots", root_path, class: "section-header" %>
+      </div>
 
     <% end %>
 
-    <h4 class="section-header">Listings</h4>
+    <h4 class="section-header">Listings:</h4>
 
     <% if !current_user.spaces.blank? %>
 
