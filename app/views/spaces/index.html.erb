@@ -12,45 +12,54 @@
     </div>
   </form>
 
-
-<div
-  id="map"
-  style='width: 100%;
-  height: calc(80vh - 70px);'
-  data-markers="<%= @markers.to_json %>"
-></div>
+<div style="position: relative">
+  <div
+    id="map"
+    style='width: 100%;
+    height: calc(100vh - 70px);'
+    data-markers="<%= @markers.to_json %>"
+  >
+  </div>
+   <div class="page-scroll text-center" style="position:absolute; bottom:30px; right: 30px">
+    <a href="#top" class="btn btn-circle">
+      <i class="fa fa-angle-down fa-2x animated"></i>
+    </a>
+  </div>
+</div>
 
 
 <div class="container">
   <h1>CLOSEST PARKING SPACES</h1>
   <div class="row">
-    <div class="col-md-12">
-      <div class="carousel slide multi-item-carousel" id="theCarousel">
-        <div class="carousel-inner">
+    <div class="row-container"></div>
+      <div class="col-md-12">
+        <div class="carousel slide multi-item-carousel" id="theCarousel">
+          <div class="carousel-inner">
 
-          <% @spaces.each_slice(3).with_index do|group, i| %>
-              <div class="item <%= 'item active' if i.zero? %>">
-            <% group.each do |space| %>
-                <div class="col-xs-4">
-                  <div class="carousel-info">
-                    <%= link_to "BOOK", space_reservations_path(space), method: :post, class: "btn btn-success btn-xs" %>
-                  </div>
-
-
-                    <div class="img-responsive">
-                      <% unless space.photo.url %>
-                        <%= cl_image_tag "v1520370914/non_existing.jpg" %>
-                      <% else %>
-                        <%= cl_image_tag space.photo%>
-                      <% end %>
+            <% @spaces.each_slice(3).with_index do|group, i| %>
+                <div class="item <%= 'item active' if i.zero? %>">
+              <% group.each do |space| %>
+                  <div class="col-xs-4">
+                    <div class="carousel-info">
+                      <%= link_to "BOOK", space_reservations_path(space), method: :post, class: "btn btn-success btn-xs" %>
                     </div>
+
+
+                      <div class="img-responsive">
+                        <% unless space.photo.url %>
+                          <%= cl_image_tag "v1520370914/non_existing.jpg" %>
+                        <% else %>
+                          <%= cl_image_tag space.photo%>
+                        <% end %>
+                      </div>
+                  </div>
+              <% end %>
                 </div>
-            <% end %>
-              </div>
-          <%end%>
+            <%end%>
+          </div>
+          <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+          <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
         </div>
-        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
     </div>
   </div>
