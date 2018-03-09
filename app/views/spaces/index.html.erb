@@ -21,58 +21,6 @@
 ></div>
 
 
-<!-- <div class="container">
-  <h1>Find more parking spaces</h1>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="carousel slide multi-item-carousel" id="theCarousel">
-        <div class="carousel-inner">
-
-          <% @spaces.each_slice(3).with_index do|group, i| %>
-              <div class="item <%= 'item active' if i.zero? %>">
-            <% group.each do |space| %>
-
-              <div class="row">
-                <div class="col s12 m7">
-                  <div class="card">
-                    <div class="card-image">
-
-                      <% unless space.photo.url %>
-                        <%= cl_image_tag "v1520370914/non_existing.jpg" %>
-                      <% else %>
-                        <%= cl_image_tag space.photo %>
-                      <% end %>
-
-                      <span class="card-title">Address: <%= space.price %></span>
-                    </div>
-                    <div class="card-content">
-                      <p>Address: <%= space.address %></p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#">This is a link</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <%end%>
-      </div>
-    </div>
-  </div>
-        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div> -->
-
-
-
-
-
-
-
-
-
-
 <div class="container">
   <h1>Find more parking spaces</h1>
   <div class="row">
@@ -99,8 +47,6 @@
             <% end %>
               </div>
           <%end%>
-
-
         </div>
         <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
         <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
