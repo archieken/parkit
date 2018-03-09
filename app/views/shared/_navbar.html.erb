@@ -12,12 +12,12 @@
       <!-- Links when logged in -->
 
     <div class="navbar-wagon-item">
-      <%= link_to t(new_space_path, default: "CREATE NEW PARKING"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      |
-       <button onclick="hideSearch()" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" aria-hidden="true"></i></button>
-      |
+      <%= link_to t(new_space_path, default: "+ post a park"), new_space_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+       <button onclick="hideSearch()" class="navbar-wagon-item navbar-wagon-link" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" style="margin-right: 10px" aria-hidden="true"></i>  search</button>
+
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-        <%= t(".sign_out", default: "LOG OUT") %>
+        <%= t(".sign_out", default: "logout") %>
       <% end %>
 
         <%= link_to profile_path(current_user.id) do %>
@@ -36,7 +36,7 @@
 
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       |
 
 <button onclick="hideSearch()" style="border:none; background-color:#3C3C3C"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -44,7 +44,7 @@
       |
 
 
-      <%= link_to "HOW IT WORKS", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "how it works", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 

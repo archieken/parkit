@@ -1,5 +1,208 @@
 <%# cl_image_tag @profile.avatar, height: 300, width: 400, crop: :fill %>
- <div class="container">
+<div class="profile-page-body">
+
+  <div>
+    <h4 class="section-header">Profile</h4>
+    <!-- PROFILE CARD -->
+    <div class="profile">
+      <div class="profile-person">
+
+        <% if @profile.avatar.nil? %>
+          <div class="profile-pic" style="background-image: asset-url('avatar.png')"></div>
+        <% else  %>
+          <div class="profile-pic" style="background-image: asset-url('<%= @profile.avatar %>')"></div>
+        <% end%>
+
+        <div class="name-rating">
+          <h3 class="profile-title"><%= @profile.first_name %></h3>
+          <div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <h5 class="light-header">Contact</h5>
+        <h4 class="number-email"><%= @profile.phone%></h4>
+        <h4 class="number-email"><%= current_user.email %></h4>
+      </div>
+    </div>
+
+    <!-- BUTTON TO EDIT PROFILE -->
+    <%= link_to edit_profile_path(current_user.profile.id) do %>
+      <div class="button add-park">
+        <h5>EDIT PROFILE</h5>
+      </div>
+    <% end %>
+
+    <!-- BUTTON TO ADD PARK -->
+    <%= link_to new_space_path() do %>
+      <div class="button add-park">
+        <h5>+ADD PARK</h5>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="bookings-and-listings">
+
+    <h4 class="section-header">Bookings</h4>
+
+    <% if !current_user.reservations.blank? %>
+
+      <% for reservation in current_user.reservations.sort_by{|reservation| reservation.start}%>
+
+        <div class="bk-lst-card">
+          <div class="book-card-detail">
+            <h4 class="number-email"><%= reservation.space.address %></h4>
+            <h4 class="number-email" style="margin-top: 10px; margin-bottom: 20px">$<%= reservation.space.price %></h4>
+            <h5 class="small-light-header">Dates Booked</h5>
+            <h5 class="dates"><%= reservation.start %></h5><div class="arrow"></div><h5 class="dates"><%= reservation.end %></h5>
+
+            <div class="small-profile-person">
+              <div style="display: flex">
+                <div class="small-profile-pic"></div>
+                <div class="small-name-rating">
+                  <h3 class="profile-title" style="color: #393939; font-size: 20px"><%= reservation.user.fullname %></h3>
+                  <div style="margin-top: -10px">
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="blue-streak"></div>
+              <div class="call"></div>
+            </div>
+          </div>
+          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')"></div>
+        </div>
+
+        <!-- <div class="col-lg-3">
+          <h5><b>Price: <%=reservation.total_cost%>€</b></h5>
+          <h6><i class="fa fa-calendar fa-fw"></i><%=reservation.start%> - <%=reservation.end%></h6>
+          <h5>Contact parking space owner:</h5>
+          <h6><%= reservation.user.fullname%></h6>
+          <h6><%= reservation.space.user.email%></h6>
+          <hr>
+        </div> -->
+
+      <% end %>
+
+    <% else %>
+
+      <div class="bk-lst-card">
+          <div class="book-card-detail">
+            <h4 class="number-email">Carrer d'En Grassot<br>101, 08025 Barcelona</h4>
+            <h4 class="number-email" style="margin-top: 10px; margin-bottom: 30px">$22</h4>
+            <h5 class="small-light-header">Dates Booked</h5>
+            <h5 class="dates">20-05-2018</h5><div class="arrow"></div><h5 class="dates">24-05-2018</h5>
+
+
+            <div class="small-profile-person">
+              <div style="display: flex">
+                <div class="small-profile-pic"></div>
+                <div class="small-name-rating">
+                  <h3 class="profile-title" style="color: #393939; font-size: 20px">JANE DOE</h3>
+                  <div style="margin-top: -10px">
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                    <div class="black-star"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="blue-streak"></div>
+              <div class="call"></div>
+            </div>
+          </div>
+          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')"></div>
+      </div>
+
+    <% end %>
+
+    <h4 class="section-header">Listings</h4>
+
+    <% if !current_user.spaces.blank? %>
+
+      <% for space in current_user.spaces.sort_by{|space| space.parking_type}%>
+        <!-- <h5><b>Price: <%=space.price%>€</b></h5>
+        <h6>rating:<%=space.avg_rating%>/100</h6>
+        <% if !space.reservation.nil? %>
+          <h6><%=space.reservation.user.fullname%></h6>
+          <h6>reservation starts:<%=space.reservation.start%></h6>
+          <h6>reservation ends:<%=space.reservation.end%></h6>
+        <% end %> -->
+
+        <div class="bk-lst-card">
+          <div class="book-card-detail">
+            <h4 class="number-email"><%= space.address %></h4>
+            <h4 class="number-email" style="margin-top: 10px; margin-bottom: 20px"><%=space.price%>€</h4>
+            <!-- <% if !space.reservation.nil? %>
+              <div class="small-profile-person">
+                <div style="display: flex">
+                  <div class="small-profile-pic"></div>
+                  <div class="small-name-rating">
+                    <h3 class="profile-title" style="color: #393939; font-size: 20px">JANE DOE</h3>
+                    <div style="margin-top: -10px">
+                      <div class="black-star"></div>
+                      <div class="black-star"></div>
+                      <div class="black-star"></div>
+                      <div class="black-star"></div>
+                      <div class="black-star"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="blue-streak"></div>
+                <div class="call"></div>
+              </div>
+              <h6><%=space.reservation.user.fullname%></h6>
+              <h6>reservation starts:<%=space.reservation.start%></h6>
+              <h6>reservation ends:<%=space.reservation.end%></h6>
+            <% end %> -->
+            <div class="edit-listing">
+              <h4 class="section-header" style="color:#FF6B6B!important; margin-bottom: -10px"><%= link_to "Delete", space_path(space.id), :style=> 'color:#FF6B6B', method: :delete %></h4>
+              <%= link_to edit_space_path(space) do %>
+                <div class="button add-park" style="height: 50px; padding:20px; padding-left: 30px; width: 250px;">
+                  <h6>EDIT LISTING</h6>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')";'>
+          </div>
+        </div>
+
+      <% end %>
+
+    <% else %>
+      <div class="bk-lst-card">
+        <div class="book-card-detail">
+          <h4 class="number-email">Carrer d'En Grassot</h4>
+          <h4 class="number-email" style="margin-top: 10px; margin-bottom: 30px">$22</h4>
+          <div class="button add-park edit-listing" style="height: 50px; padding:20px; padding-left: 30px; width: 250px;">
+            <h6>EDIT LISTING</h6>
+          </div>
+        </div>
+        <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')";'>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+
+
+ <!-- <div class="container">
           <div class="row">
 
           <div class="col-lg-6">
@@ -63,4 +266,61 @@
 
     </div>
 
-  </div>
+  </div> -->
+
+
+<!--         <% if !current_user.reservations.blank? %>
+
+          <% for reservation in current_user.reservations.sort_by{|reservation| reservation.start}%>
+
+            <div class="bk-lst-card">
+              <div class="book-card-detail">
+                <h4 class="number-email">Carrer d'En Grassot<br>101, 08025 Barcelona</h4>
+                <h4 class="number-email" style="margin-top: 10px; margin-bottom: 30px">$22</h4>
+                <h5 class="small-light-header">Dates Booked</h5>
+                <h5 class="dates">20-05-2018</h5><div class="arrow"></div><h5 class="dates">24-05-2018</h5>
+
+                <div class="small-profile-person">
+                  <div style="display: flex">
+                    <div class="small-profile-pic"></div>
+                    <div class="small-name-rating">
+                      <h3 class="profile-title" style="color: #393939; font-size: 20px">JANE DOE</h3>
+                      <div style="margin-top: -10px">
+                        <div class="black-star"></div>
+                        <div class="black-star"></div>
+                        <div class="black-star"></div>
+                        <div class="black-star"></div>
+                        <div class="black-star"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="blue-streak"></div>
+                  <div class="call"></div>
+                </div>
+              </div>
+              <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')"></div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- <div class="col-lg-3">
+              <h5><b>Price: <%=reservation.total_cost%>€</b></h5>
+              <h6><i class="fa fa-calendar fa-fw"></i><%=reservation.start%> - <%=reservation.end%></h6>
+              <h5>Contact parking space owner:</h5>
+              <h6><%= reservation.user.fullname%></h6>
+              <h6><%= reservation.space.user.email%></h6>
+              <hr>
+            </div> -->
+
+          <% end %>
+
+        <% else %>
+
+          <h3>There are no bookings.</h3>
+
+        <% end %> -->

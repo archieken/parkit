@@ -66,7 +66,7 @@
     names = ["Bill","Jenny","Kyle","Fran","Jess"]
 
     emails.each do |email|
-      Profile.create(first_name: names.sample, last_name: "Morris", phone: "12345567", description: "blablah", avatar: "empty", user: User.find_by(email: email))
+      Profile.create(first_name: names.sample, last_name: "Morris", phone: "12345567", description: "blablah", avatar: "https://media3.s-nbcnews.com/j/newscms/2014_18/418791/140504-obama-correspondents-dinner-750a_53ba5a0e11b559d8a78cdb2962b30bfd.nbcnews-ux-2880-1000.jpg", user: User.find_by(email: email))
     end
     puts "Profiles made"
 
