@@ -66,7 +66,9 @@
     names = ["Bill","Jenny","Kyle","Fran","Jess"]
 
     emails.each do |email|
+
       Profile.create(phone: "12345567", description: "Shazam for food", avatar: "http://siliconvalleyism.com/characters/jian-yang-small.jpg", user: User.find_by(email: email))
+
     end
     puts "Profiles made"
 
