@@ -99,7 +99,7 @@
 
     <% end %>
 
-    <h4 class="section-header">Listings:</h4>
+    <h4 class="section-header" style="display: inline-block;">Listings:</h4>
 
     <% if !current_user.spaces.blank? %>
 
@@ -155,7 +155,7 @@
       <% end %>
 
     <% else %>
-      <h3>You have no listings yet</h3>
+      <h4 class="section-header" style="display: inline-block; color: #393939"">You have no listings yet</h4>
     <% end %>
 
   </div>
