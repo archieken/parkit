@@ -75,13 +75,13 @@
               <div class="call"></div>
             </div>
           </div>
-          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&markers=color:red%7C40.718217,-73.998284&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')"></div>
+          <div class="card-map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%=reservation.space.latitude.to_s%>,<%=reservation.space.longitude.to_s%>&markers=color:red%7C<%=reservation.space.latitude.to_s%>,<%=reservation.space.longitude.to_s%>&zoom=12&size=480x380&key=AIzaSyCKxAu_Y-IhJUSTXAcMghvx_UDSBSGm2l8')"></div>
         </div>
 
         <!-- <div class="col-lg-3">
           <h5><b>Price: <%=reservation.total_cost%>€</b></h5>
           <h6><i class="fa fa-calendar fa-fw"></i><%=reservation.start%> - <%=reservation.end%></h6>
-          <h5>Contact parking space owner:</h5>
+          <h5>Contact parking reservation.space owner:</h5>
           <h6><%= reservation.user.fullname%></h6>
           <h6><%= reservation.space.user.email%></h6>
           <hr>
@@ -92,10 +92,13 @@
     <% else %>
 
       <h4 class="section-header" style="display: inline-block; color: #393939""> Currently no Bookings</h4>
-      <div class="blank-card">
-        <i class="fa fa-search" class="section-header"></i>
-        <%= link_to "Search Parking Spots", root_path, class: "section-header" %>
-      </div>
+       <form class="homepage-form" action=<%=spaces_path%>>
+      <input type="text" name="location" value="London" class="location-input" style="width:30%">
+      <input type="date" name="start" value=<%=Date.today.to_s%>>
+      <input type="date" name="end" value=<%=(Date.today + 1.days).to_s%>>
+      <input type="text" name="distance" style="display:none" value="2000">
+      <input type="submit" value="SEARCH" class="button">
+    </form>
 
     <% end %>
 
