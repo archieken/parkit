@@ -1,21 +1,72 @@
-<div class="container">
-  <h1>USING PARKIT</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia culpa optio voluptas placeat nobis repudiandae velit dignissimos eum nesciunt, saepe alias quaerat eius quo et. Earum ea officia sapiente explicabo eligendi, totam odit eius temporibus delectus, ad necessitatibus dolore. Excepturi quod repudiandae necessitatibus consectetur reiciendis sed sequi exercitationem hic, ea saepe recusandae distinctio cumque aspernatur quidem animi quis iste, accusantium laudantium magni harum facilis minima mollitia explicabo dolores! </p>
-  <hr>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum autem consequatur quaerat ut, provident cum ipsam culpa eligendi quo commodi excepturi maiores mollitia odit atque.</p>
-  <hr>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis delectus rem repudiandae quidem suscipit esse, saepe distinctio dolore, similique ad laboriosam voluptate cumque? Dolorem nostrum consectetur obcaecati non, ratione, asperiores.</p>
-  <hr>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium magni veniam ad corporis similique excepturi facilis sunt inventore deleniti distinctio!</p>
-</div>
-<div style="background-color: #fbf8f4; display: flex; flex-direction: column; align-items: center;">
-  <div>
-    <h2>Stay up to date with PARKIT News!</h2>
-  </div>
-  <div>
-    <%= form_for @subscription, :url => subscriptions_path do |f| %>
-      <%= f.text_field :email, placeholder: "enter email" %>
-      <%= f.submit "Create" %>
-    <% end %>
+<div class="about-screen">
+  <div class="banner-about">
+    <div class="section-content">
+    <h2 class="home-title" style="font-size: 120px; text-align: center;">
+    <u>PARKIT</u>
+    </h2>
+     <h3 class="section-para">
+      Find a great place to park instantly
+    </h3>
   </div>
 </div>
+<div class="section">
+  <div class="section-content">
+    <h2 class="home-title" style="font-size: 60px">How it works</h2>
+    <h4 class="section-para">
+      Book parking spaces where you need them, when you need them, from verified local parking space owners.
+    </h4>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-avatar"><%# image_tag 'DeliveryTruck.svg', :class => "delivery-truck-icon" %></i></div>
+        <h4 class="feature-title">Easy Parking</h4>
+        <p class="feature-para">Find available parking spacing by location and date.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-avatar"><%# image_tag 'Watermelon.svg', :class => "watermelon-icon" %></i></div>
+        <h4 class="feature-title">Safe Renting</h4>
+        <p class="feature-para">Rent spaces from verified users and get in touch with them.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-avatar"><%# image_tag 'HouseLocal.svg', :class => "house-icon" %></i></div>
+        <h4 class="feature-title">Anywhere in the world</h4>
+        <p class="feature-para">Verified parking space owners offer their spaces around the globe.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-avatar"><%# image_tag 'EcoLeaf.svg', :class => "ecoleaf-icon" %></i></div>
+        <h4 class="feature-title">Reserve for a trip</h4>
+        <p class="feature-para">Reserve your space up to a month before you need it!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div style="background-color: #cbd6d4; padding-top: 4%; padding-bottom: 4%">
+    <h1>USING PARKIT</h1>
+    <div class="row" style="margin: 2%;">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum autem consequatur quaerat ut, provident cum ipsam culpa eligendi quo commodi excepturi maiores mollitia odit atque.</p>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis delectus rem repudiandae quidem suscipit esse, saepe distinctio dolore, similique ad laboriosam voluptate cumque? Dolorem nostrum consectetur obcaecati non, ratione, asperiores.</p>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum autem consequatur quaerat ut, provident cum ipsam culpa eligendi quo commodi excepturi maiores mollitia odit atque.</p>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis delectus rem repudiandae quidem suscipit esse, saepe distinctio dolore, similique ad laboriosam voluptate cumque? Dolorem nostrum consectetur obcaecati non, ratione, asperiores.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 4%;">
+    <div>
+      <h3>Stay up to date with PARKIT News!</h3>
+    </div>
+    <div>
+      <%= form_for @subscription, :url => subscriptions_path do |f| %>
+        <%= f.text_field :email, placeholder: "Enter your email" %>
+        <%= f.submit "subscribe" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
