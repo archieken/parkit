@@ -87,3 +87,112 @@ input {
   border: none;
   padding: 15px
 }
+
+// ---------   WHY SHOP HERE DIV   ------------
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-para {
+  margin: 30px 100px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.feature-avatar {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #F2ECE5;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.feature-title {
+  font-family: BebasNeue-Regular;
+  font-weight: 600;
+  color: #524F4C;
+  font-size: 30px;
+}
+
+.feature-para {
+  font-size: 16px;
+  opacity: 0.5;
+  width: 80%;
+}
+
+.homepage-submit {
+  border: none;
+  display: inline-block;
+  padding: 0px;
+}
+
+// ---------   ABOUT PAGE   ------------
+.about-screen {
+
+}
+
+.banner-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  text-align: center;
+  padding: 10px 0px;
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 50%), asset-url("happy_parking.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-content-about {
+  margin-bottom: 100px;
+}
+
+.home-title-about {
+  font-family: 'BebasNeue-Regular';
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  color: #524F4C;
+}
+
+.feature-about {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
