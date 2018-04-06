@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home' # Root  ‘/’   =>  'pages#home’
   get '/about', to: 'pages#about'
+  post   "/subscriptions", to: "pages#create_subscription", as: "subscriptions"
 
   resources :users, only: [:new, :create, :edit, :update]
 

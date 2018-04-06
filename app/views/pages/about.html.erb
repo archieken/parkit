@@ -8,4 +8,14 @@
   <hr>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium magni veniam ad corporis similique excepturi facilis sunt inventore deleniti distinctio!</p>
 </div>
-
+<div style="background-color: #fbf8f4; display: flex; flex-direction: column; align-items: center;">
+  <div>
+    <h2>Stay up to date with PARKIT News!</h2>
+  </div>
+  <div>
+    <%= form_for @subscription, :url => subscriptions_path do |f| %>
+      <%= f.text_field :email, placeholder: "enter email" %>
+      <%= f.submit "Create" %>
+    <% end %>
+  </div>
+</div>
