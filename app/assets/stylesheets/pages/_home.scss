@@ -131,9 +131,33 @@ input {
   height: 100px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #F2ECE5;
   border-radius: 50%;
   margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.logo-title-icon {
+  height: 60px;
+  margin-top: 16px;
+  color: black;
+}
+
+.check-square-icon {
+  height: 60px;
+  margin-top: 16px;
+  opacity: 0.8;
+}
+
+.city-car-icon {
+  height: 60px;
+  margin-top: 16px;
+  width: 120px;
+}
+
+.calendar-square-icon {
+  height: 60px;
+  margin-top: 16px;
+  opacity: 0.8;
 }
 
 .feature-title {
