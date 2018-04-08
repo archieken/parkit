@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    subscription = Subscription.new
+    @subscription = Subscription.new
   end
 
   def create_subscription
